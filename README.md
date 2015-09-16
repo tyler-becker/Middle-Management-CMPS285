@@ -1,2 +1,2 @@
-# CMPS-285-Project
-"Cove" Chat Client
+# CMPS 285 Project
+#"Cove" Chat Client
