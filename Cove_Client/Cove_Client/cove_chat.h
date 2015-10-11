@@ -3,6 +3,10 @@
 
 #include <QDialog>
 
+class cove_account;
+class cove_login;
+class cove_menu;
+
 namespace Ui {
 class cove_chat;
 }
@@ -17,6 +21,9 @@ public:
 
 private:
     Ui::cove_chat *ui;
+
+    //Pointers for Cove Chat Window Buttons.
+
 };
 
 #endif // COVE_CHAT_H

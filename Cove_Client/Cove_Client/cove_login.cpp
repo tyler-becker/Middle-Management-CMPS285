@@ -9,6 +9,11 @@
 cove_login::cove_login(QWidget *parent) : QMainWindow(parent), ui(new Ui::cove_login)
 {
     ui->setupUi(this);
+    this->setWindowFlags(this->windowFlags() & ~Qt::WindowMaximizeButtonHint);
+
+    //Icon for Cove Login Window, commented because PATH is not absolute.
+    //QPixmap pix("E:/School/General CMPS/Qt Projects/Cove_Client/SmallDino.PNG");
+    //ui->label_LoginLogo->setPixmap(pix);
 }
 
 cove_login::~cove_login()
@@ -31,11 +36,9 @@ void cove_login::on_pushButton_LogIn_clicked()
     //cove_menu.exec();
 
     //modeless approach
-    CoveMenu = new cove_menu(this);
-    CoveMenu->show();
+    newCoveMenuWindow = new cove_menu(this);
+    newCoveMenuWindow->show();
  }
-
-
 
 //cove_login::cove_login()
 //{
@@ -46,8 +49,8 @@ void cove_login::on_pushButton_LogIn_clicked()
 
 void cove_login::on_pushButton_CreateAccount_clicked()
 {
-    CoveAccount = new cove_account(this);
-    CoveAccount->show();
+    newCoveAccountWindow = new cove_account(this);
+    newCoveAccountWindow->show();
 }
 
 

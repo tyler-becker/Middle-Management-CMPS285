@@ -15,15 +15,14 @@ cove_account::~cove_account()
     delete ui;
 }
 
-//void cove_account::on_pushButton_CreatAccount2_clicked()
-//{
-//    CoveMenu = new cove_menu(this);
-//    CoveMenu->show();
-//}
+void cove_account::on_pushButton_CreateAccount2_clicked()
+{
+    newCoveLoginWindow = new cove_login(this);
+    this->hide();
+}
 
-//void cove_account::on_pushButton_Back_clicked()
-//{
-//    CoveLogin = new cove_login(this);
-//    CoveLogin->show();
-//}
-
+void cove_account::on_pushButton_Back_clicked()
+{
+    newCoveLoginWindow = new cove_login(this);
+    this->hide();
+}

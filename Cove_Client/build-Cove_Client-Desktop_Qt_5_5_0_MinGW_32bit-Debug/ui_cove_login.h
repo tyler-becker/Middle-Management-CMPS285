@@ -13,7 +13,6 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
-#include <QtWidgets/QGraphicsView>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
@@ -29,13 +28,13 @@ class Ui_cove_login
 public:
     QWidget *centralWidget;
     QPushButton *pushButton_LogIn;
-    QLabel *label_Password;
-    QTextEdit *textEdit_Password;
-    QTextEdit *textEdit_Account;
-    QLabel *label__Account;
     QLabel *label_Cove;
     QPushButton *pushButton_CreateAccount;
-    QGraphicsView *graphicsView_Logo;
+    QTextEdit *textEdit_Account;
+    QLabel *label__Username;
+    QLabel *label_Password;
+    QTextEdit *textEdit_Password;
+    QLabel *label_LoginLogo;
     QStatusBar *statusBar;
 
     void setupUi(QMainWindow *cove_login)
@@ -114,7 +113,7 @@ public:
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         pushButton_LogIn = new QPushButton(centralWidget);
         pushButton_LogIn->setObjectName(QStringLiteral("pushButton_LogIn"));
-        pushButton_LogIn->setGeometry(QRect(210, 380, 161, 41));
+        pushButton_LogIn->setGeometry(QRect(190, 370, 190, 45));
         QPalette palette1;
         palette1.setBrush(QPalette::Active, QPalette::WindowText, brush6);
         QBrush brush8(QColor(170, 0, 255, 255));
@@ -175,53 +174,25 @@ public:
         palette1.setBrush(QPalette::Disabled, QPalette::ToolTipText, brush6);
         pushButton_LogIn->setPalette(palette1);
         QFont font1;
-        font1.setPointSize(10);
+        font1.setPointSize(12);
         pushButton_LogIn->setFont(font1);
         pushButton_LogIn->setAutoFillBackground(false);
         pushButton_LogIn->setStyleSheet(QStringLiteral(""));
-        label_Password = new QLabel(centralWidget);
-        label_Password->setObjectName(QStringLiteral("label_Password"));
-        label_Password->setGeometry(QRect(150, 280, 101, 51));
-        QFont font2;
-        font2.setPointSize(12);
-        label_Password->setFont(font2);
-        textEdit_Password = new QTextEdit(centralWidget);
-        textEdit_Password->setObjectName(QStringLiteral("textEdit_Password"));
-        textEdit_Password->setGeometry(QRect(150, 320, 271, 31));
-        textEdit_Password->setFont(font2);
-        textEdit_Password->setFrameShape(QFrame::StyledPanel);
-        textEdit_Password->setFrameShadow(QFrame::Sunken);
-        textEdit_Password->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-        textEdit_Password->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-        textEdit_Password->setTabChangesFocus(true);
-        textEdit_Password->setReadOnly(false);
-        textEdit_Password->setOverwriteMode(false);
-        textEdit_Account = new QTextEdit(centralWidget);
-        textEdit_Account->setObjectName(QStringLiteral("textEdit_Account"));
-        textEdit_Account->setGeometry(QRect(150, 250, 271, 31));
-        textEdit_Account->setFont(font2);
-        textEdit_Account->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-        textEdit_Account->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-        textEdit_Account->setTabChangesFocus(true);
-        textEdit_Account->setUndoRedoEnabled(true);
-        textEdit_Account->setLineWrapMode(QTextEdit::WidgetWidth);
-        label__Account = new QLabel(centralWidget);
-        label__Account->setObjectName(QStringLiteral("label__Account"));
-        label__Account->setGeometry(QRect(150, 220, 101, 31));
-        label__Account->setFont(font2);
         label_Cove = new QLabel(centralWidget);
         label_Cove->setObjectName(QStringLiteral("label_Cove"));
-        label_Cove->setGeometry(QRect(230, 30, 91, 51));
-        QFont font3;
-        font3.setPointSize(28);
-        font3.setBold(true);
-        font3.setWeight(75);
-        label_Cove->setFont(font3);
+        label_Cove->setGeometry(QRect(220, 30, 130, 50));
+        QFont font2;
+        font2.setPointSize(28);
+        font2.setBold(true);
+        font2.setWeight(75);
+        label_Cove->setFont(font2);
         label_Cove->setLayoutDirection(Qt::LeftToRight);
         label_Cove->setFrameShape(QFrame::NoFrame);
+        label_Cove->setTextFormat(Qt::AutoText);
+        label_Cove->setAlignment(Qt::AlignCenter);
         pushButton_CreateAccount = new QPushButton(centralWidget);
         pushButton_CreateAccount->setObjectName(QStringLiteral("pushButton_CreateAccount"));
-        pushButton_CreateAccount->setGeometry(QRect(210, 430, 161, 41));
+        pushButton_CreateAccount->setGeometry(QRect(190, 430, 190, 45));
         QPalette palette2;
         palette2.setBrush(QPalette::Active, QPalette::WindowText, brush6);
         palette2.setBrush(QPalette::Active, QPalette::Button, brush8);
@@ -271,28 +242,53 @@ public:
         pushButton_CreateAccount->setPalette(palette2);
         pushButton_CreateAccount->setFont(font1);
         pushButton_CreateAccount->setAutoFillBackground(false);
-        graphicsView_Logo = new QGraphicsView(centralWidget);
-        graphicsView_Logo->setObjectName(QStringLiteral("graphicsView_Logo"));
-        graphicsView_Logo->setGeometry(QRect(230, 100, 101, 101));
-        graphicsView_Logo->setAcceptDrops(false);
-        graphicsView_Logo->setAutoFillBackground(false);
-        graphicsView_Logo->setInteractive(false);
+        textEdit_Account = new QTextEdit(centralWidget);
+        textEdit_Account->setObjectName(QStringLiteral("textEdit_Account"));
+        textEdit_Account->setGeometry(QRect(151, 251, 269, 32));
+        textEdit_Account->setFont(font1);
+        textEdit_Account->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        textEdit_Account->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        textEdit_Account->setTabChangesFocus(true);
+        textEdit_Account->setUndoRedoEnabled(true);
+        textEdit_Account->setLineWrapMode(QTextEdit::WidgetWidth);
+        label__Username = new QLabel(centralWidget);
+        label__Username->setObjectName(QStringLiteral("label__Username"));
+        label__Username->setGeometry(QRect(151, 221, 95, 23));
+        label__Username->setFont(font1);
+        label_Password = new QLabel(centralWidget);
+        label_Password->setObjectName(QStringLiteral("label_Password"));
+        label_Password->setGeometry(QRect(151, 290, 94, 23));
+        label_Password->setFont(font1);
+        textEdit_Password = new QTextEdit(centralWidget);
+        textEdit_Password->setObjectName(QStringLiteral("textEdit_Password"));
+        textEdit_Password->setGeometry(QRect(151, 320, 269, 32));
+        textEdit_Password->setFont(font1);
+        textEdit_Password->setFrameShape(QFrame::StyledPanel);
+        textEdit_Password->setFrameShadow(QFrame::Sunken);
+        textEdit_Password->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        textEdit_Password->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        textEdit_Password->setTabChangesFocus(true);
+        textEdit_Password->setReadOnly(false);
+        textEdit_Password->setOverwriteMode(false);
+        label_LoginLogo = new QLabel(centralWidget);
+        label_LoginLogo->setObjectName(QStringLiteral("label_LoginLogo"));
+        label_LoginLogo->setGeometry(QRect(235, 100, 100, 100));
+        label_LoginLogo->setAlignment(Qt::AlignCenter);
         cove_login->setCentralWidget(centralWidget);
+        textEdit_Account->raise();
+        label__Username->raise();
         label_Password->raise();
         textEdit_Password->raise();
-        textEdit_Account->raise();
-        label__Account->raise();
         label_Cove->raise();
-        graphicsView_Logo->raise();
         pushButton_CreateAccount->raise();
         pushButton_LogIn->raise();
+        label_LoginLogo->raise();
         statusBar = new QStatusBar(cove_login);
         statusBar->setObjectName(QStringLiteral("statusBar"));
         cove_login->setStatusBar(statusBar);
         QWidget::setTabOrder(textEdit_Account, textEdit_Password);
         QWidget::setTabOrder(textEdit_Password, pushButton_LogIn);
         QWidget::setTabOrder(pushButton_LogIn, pushButton_CreateAccount);
-        QWidget::setTabOrder(pushButton_CreateAccount, graphicsView_Logo);
 
         retranslateUi(cove_login);
 
@@ -303,10 +299,11 @@ public:
     {
         cove_login->setWindowTitle(QApplication::translate("cove_login", "Cove Client", 0));
         pushButton_LogIn->setText(QApplication::translate("cove_login", "Login", 0));
-        label_Password->setText(QApplication::translate("cove_login", "Password:", 0));
-        label__Account->setText(QApplication::translate("cove_login", "Account:", 0));
         label_Cove->setText(QApplication::translate("cove_login", "Cove", 0));
         pushButton_CreateAccount->setText(QApplication::translate("cove_login", "Create Account", 0));
+        label__Username->setText(QApplication::translate("cove_login", "Username:", 0));
+        label_Password->setText(QApplication::translate("cove_login", "Password:", 0));
+        label_LoginLogo->setText(QString());
     } // retranslateUi
 
 };

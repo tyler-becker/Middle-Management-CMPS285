@@ -2,11 +2,10 @@
 #define COVE_MENU_H
 
 #include <QWidget>
-#include "cove_account.h"
-#include "cove_login.h"
 
-//class account;
-//class login;
+class cove_account;
+class cove_chat;
+class cove_login;
 
 namespace Ui {
   class cove_menu;
@@ -20,8 +19,17 @@ public:
     explicit cove_menu(QWidget *parent = 0);
     ~cove_menu();
 
+private slots:
+    void on_pushButton_Back_clicked();
+
+    void on_pushButton_GeneralChat_clicked();
+
 private:
     Ui::cove_menu *ui;
+
+    //Pointers for Menu Window Buttons.
+    cove_login *newCoveLoginWindow;
+    cove_chat *newCoveChatWindow;
 };
 
 #endif // COVE_MENU_H

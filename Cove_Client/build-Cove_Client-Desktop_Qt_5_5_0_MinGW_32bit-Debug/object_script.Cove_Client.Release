@@ -1,0 +1,12 @@
+INPUT(
+./release\main.o
+./release\cove_login.o
+./release\cove_menu.o
+./release\cove_account.o
+./release\cove_chat.o
+./release\qrc_icon.o
+./release\moc_cove_login.o
+./release\moc_cove_menu.o
+./release\moc_cove_account.o
+./release\moc_cove_chat.o
+);

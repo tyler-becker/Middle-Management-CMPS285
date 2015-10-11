@@ -1,0 +1,3 @@
+#include <cove_login.h>
+
+ID_ICON ICON DISCARDABLE "Cove_Client_Icon.ico"

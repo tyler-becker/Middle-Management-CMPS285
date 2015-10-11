@@ -1,0 +1,12 @@
+INPUT(
+./debug\main.o
+./debug\cove_login.o
+./debug\cove_menu.o
+./debug\cove_account.o
+./debug\cove_chat.o
+./debug\qrc_icon.o
+./debug\moc_cove_login.o
+./debug\moc_cove_menu.o
+./debug\moc_cove_account.o
+./debug\moc_cove_chat.o
+);

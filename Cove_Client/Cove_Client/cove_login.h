@@ -2,11 +2,10 @@
 #define COVE_LOGIN_H
 
 #include <QMainWindow>
-//#include "cove_menu.h"
-//#include "cove_account.h"
 
-class cove_menu;
 class cove_account;
+class cove_chat;
+class cove_menu;
 
 namespace Ui {
   class cove_login;
@@ -27,8 +26,10 @@ private slots:
 
 private:
     Ui::cove_login *ui;
-    cove_menu *CoveMenu;
-    cove_account *CoveAccount;
+
+    //Pointers for Login Window Buttons.
+    cove_menu *newCoveMenuWindow;
+    cove_account *newCoveAccountWindow;
 };
 
 #endif // COVE_LOGIN_H
