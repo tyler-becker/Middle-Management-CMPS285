@@ -15,8 +15,8 @@
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QTextEdit>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -26,18 +26,18 @@ class Ui_cove_account
 public:
     QPushButton *pushButton_CreateAccount2;
     QPushButton *pushButton_Back;
-    QTextEdit *textEdit_ConfirmPassword;
     QLabel *label_ConfirmPassword;
-    QTextEdit *textEdit_Domain;
     QLabel *label_Domain;
-    QTextEdit *textEdit_ConnectionServer;
     QLabel *label_ConnectionServer;
     QLabel *label_ConnectionPort;
-    QTextEdit *textEdit_ConnectionPort;
     QLabel *label_Username;
-    QTextEdit *textEdit_Username;
     QLabel *label_Password;
-    QTextEdit *textEdit_Password;
+    QLineEdit *lineEdit_Username;
+    QLineEdit *lineEdit_ConnectionServer;
+    QLineEdit *lineEdit_Domain;
+    QLineEdit *lineEdit_ConfirmPassword;
+    QLineEdit *lineEdit_Password;
+    QLineEdit *lineEdit_ConnectionPort;
 
     void setupUi(QWidget *cove_account)
     {
@@ -230,35 +230,14 @@ public:
         pushButton_Back->setFont(font);
         pushButton_Back->setAutoFillBackground(false);
         pushButton_Back->setStyleSheet(QStringLiteral(""));
-        textEdit_ConfirmPassword = new QTextEdit(cove_account);
-        textEdit_ConfirmPassword->setObjectName(QStringLiteral("textEdit_ConfirmPassword"));
-        textEdit_ConfirmPassword->setGeometry(QRect(121, 240, 329, 32));
-        textEdit_ConfirmPassword->setFont(font);
-        textEdit_ConfirmPassword->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-        textEdit_ConfirmPassword->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-        textEdit_ConfirmPassword->setUndoRedoEnabled(true);
         label_ConfirmPassword = new QLabel(cove_account);
         label_ConfirmPassword->setObjectName(QStringLiteral("label_ConfirmPassword"));
         label_ConfirmPassword->setGeometry(QRect(121, 210, 168, 23));
         label_ConfirmPassword->setFont(font);
-        textEdit_Domain = new QTextEdit(cove_account);
-        textEdit_Domain->setObjectName(QStringLiteral("textEdit_Domain"));
-        textEdit_Domain->setGeometry(QRect(121, 310, 329, 32));
-        textEdit_Domain->setFont(font);
-        textEdit_Domain->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-        textEdit_Domain->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-        textEdit_Domain->setUndoRedoEnabled(true);
         label_Domain = new QLabel(cove_account);
         label_Domain->setObjectName(QStringLiteral("label_Domain"));
         label_Domain->setGeometry(QRect(121, 280, 72, 23));
         label_Domain->setFont(font);
-        textEdit_ConnectionServer = new QTextEdit(cove_account);
-        textEdit_ConnectionServer->setObjectName(QStringLiteral("textEdit_ConnectionServer"));
-        textEdit_ConnectionServer->setGeometry(QRect(121, 380, 329, 32));
-        textEdit_ConnectionServer->setFont(font);
-        textEdit_ConnectionServer->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-        textEdit_ConnectionServer->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-        textEdit_ConnectionServer->setUndoRedoEnabled(true);
         label_ConnectionServer = new QLabel(cove_account);
         label_ConnectionServer->setObjectName(QStringLiteral("label_ConnectionServer"));
         label_ConnectionServer->setGeometry(QRect(121, 350, 167, 23));
@@ -267,26 +246,12 @@ public:
         label_ConnectionPort->setObjectName(QStringLiteral("label_ConnectionPort"));
         label_ConnectionPort->setGeometry(QRect(121, 420, 146, 23));
         label_ConnectionPort->setFont(font);
-        textEdit_ConnectionPort = new QTextEdit(cove_account);
-        textEdit_ConnectionPort->setObjectName(QStringLiteral("textEdit_ConnectionPort"));
-        textEdit_ConnectionPort->setGeometry(QRect(121, 450, 329, 32));
-        textEdit_ConnectionPort->setFont(font);
-        textEdit_ConnectionPort->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-        textEdit_ConnectionPort->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-        textEdit_ConnectionPort->setUndoRedoEnabled(true);
         label_Username = new QLabel(cove_account);
         label_Username->setObjectName(QStringLiteral("label_Username"));
         label_Username->setGeometry(QRect(121, 71, 97, 24));
         QFont font1;
         font1.setPointSize(12);
         label_Username->setFont(font1);
-        textEdit_Username = new QTextEdit(cove_account);
-        textEdit_Username->setObjectName(QStringLiteral("textEdit_Username"));
-        textEdit_Username->setGeometry(QRect(121, 102, 329, 32));
-        textEdit_Username->setFont(font);
-        textEdit_Username->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-        textEdit_Username->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-        textEdit_Username->setUndoRedoEnabled(true);
         label_Password = new QLabel(cove_account);
         label_Password->setObjectName(QStringLiteral("label_Password"));
         label_Password->setGeometry(QRect(121, 140, 94, 23));
@@ -296,13 +261,61 @@ public:
         font2.setBold(false);
         font2.setWeight(50);
         label_Password->setFont(font2);
-        textEdit_Password = new QTextEdit(cove_account);
-        textEdit_Password->setObjectName(QStringLiteral("textEdit_Password"));
-        textEdit_Password->setGeometry(QRect(121, 170, 329, 32));
-        textEdit_Password->setFont(font);
-        textEdit_Password->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-        textEdit_Password->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-        textEdit_Password->setUndoRedoEnabled(true);
+        lineEdit_Username = new QLineEdit(cove_account);
+        lineEdit_Username->setObjectName(QStringLiteral("lineEdit_Username"));
+        lineEdit_Username->setGeometry(QRect(120, 100, 330, 32));
+        lineEdit_Username->setFont(font);
+        lineEdit_Username->setStyleSheet(QLatin1String("QLineEdit{\n"
+"	color: white;\n"
+"	background: black;\n"
+"}"));
+        lineEdit_ConnectionServer = new QLineEdit(cove_account);
+        lineEdit_ConnectionServer->setObjectName(QStringLiteral("lineEdit_ConnectionServer"));
+        lineEdit_ConnectionServer->setGeometry(QRect(120, 380, 330, 32));
+        lineEdit_ConnectionServer->setFont(font);
+        lineEdit_ConnectionServer->setStyleSheet(QLatin1String("QLineEdit{\n"
+"	color: white;\n"
+"	background: black;\n"
+"}"));
+        lineEdit_Domain = new QLineEdit(cove_account);
+        lineEdit_Domain->setObjectName(QStringLiteral("lineEdit_Domain"));
+        lineEdit_Domain->setGeometry(QRect(120, 310, 330, 32));
+        lineEdit_Domain->setFont(font);
+        lineEdit_Domain->setStyleSheet(QLatin1String("QLineEdit{\n"
+"	color: white;\n"
+"	background: black;\n"
+"}"));
+        lineEdit_ConfirmPassword = new QLineEdit(cove_account);
+        lineEdit_ConfirmPassword->setObjectName(QStringLiteral("lineEdit_ConfirmPassword"));
+        lineEdit_ConfirmPassword->setGeometry(QRect(120, 240, 330, 32));
+        lineEdit_ConfirmPassword->setFont(font);
+        lineEdit_ConfirmPassword->setStyleSheet(QLatin1String("QLineEdit{\n"
+"	color: white;\n"
+"	background: black;\n"
+"}"));
+        lineEdit_Password = new QLineEdit(cove_account);
+        lineEdit_Password->setObjectName(QStringLiteral("lineEdit_Password"));
+        lineEdit_Password->setGeometry(QRect(120, 170, 330, 32));
+        lineEdit_Password->setFont(font);
+        lineEdit_Password->setStyleSheet(QLatin1String("QLineEdit{\n"
+"	color: white;\n"
+"	background: black;\n"
+"}"));
+        lineEdit_ConnectionPort = new QLineEdit(cove_account);
+        lineEdit_ConnectionPort->setObjectName(QStringLiteral("lineEdit_ConnectionPort"));
+        lineEdit_ConnectionPort->setGeometry(QRect(120, 450, 330, 32));
+        lineEdit_ConnectionPort->setFont(font);
+        lineEdit_ConnectionPort->setStyleSheet(QLatin1String("QLineEdit{\n"
+"	color: white;\n"
+"	background: black;\n"
+"}"));
+        QWidget::setTabOrder(lineEdit_Username, lineEdit_Password);
+        QWidget::setTabOrder(lineEdit_Password, lineEdit_ConfirmPassword);
+        QWidget::setTabOrder(lineEdit_ConfirmPassword, lineEdit_Domain);
+        QWidget::setTabOrder(lineEdit_Domain, lineEdit_ConnectionServer);
+        QWidget::setTabOrder(lineEdit_ConnectionServer, lineEdit_ConnectionPort);
+        QWidget::setTabOrder(lineEdit_ConnectionPort, pushButton_CreateAccount2);
+        QWidget::setTabOrder(pushButton_CreateAccount2, pushButton_Back);
 
         retranslateUi(cove_account);
 

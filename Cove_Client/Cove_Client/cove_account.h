@@ -28,7 +28,6 @@ private:
     Ui::cove_account *ui;
 
     //Pointers for Account Create Window Buttons.
-    //cove_menu *newCoveLogin;
     cove_login *newCoveLoginWindow;
 };
 

@@ -1314,31 +1314,6 @@
     <string>Back</string>
    </property>
   </widget>
-  <widget class="QTextEdit" name="textEdit_ConfirmPassword">
-   <property name="geometry">
-    <rect>
-     <x>121</x>
-     <y>240</y>
-     <width>329</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Arial</family>
-     <pointsize>12</pointsize>
-    </font>
-   </property>
-   <property name="verticalScrollBarPolicy">
-    <enum>Qt::ScrollBarAlwaysOff</enum>
-   </property>
-   <property name="horizontalScrollBarPolicy">
-    <enum>Qt::ScrollBarAlwaysOff</enum>
-   </property>
-   <property name="undoRedoEnabled">
-    <bool>true</bool>
-   </property>
-  </widget>
   <widget class="QLabel" name="label_ConfirmPassword">
    <property name="geometry">
     <rect>
@@ -1358,31 +1333,6 @@
     <string>Confirm Password:</string>
    </property>
   </widget>
-  <widget class="QTextEdit" name="textEdit_Domain">
-   <property name="geometry">
-    <rect>
-     <x>121</x>
-     <y>310</y>
-     <width>329</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Arial</family>
-     <pointsize>12</pointsize>
-    </font>
-   </property>
-   <property name="verticalScrollBarPolicy">
-    <enum>Qt::ScrollBarAlwaysOff</enum>
-   </property>
-   <property name="horizontalScrollBarPolicy">
-    <enum>Qt::ScrollBarAlwaysOff</enum>
-   </property>
-   <property name="undoRedoEnabled">
-    <bool>true</bool>
-   </property>
-  </widget>
   <widget class="QLabel" name="label_Domain">
    <property name="geometry">
     <rect>
@@ -1400,31 +1350,6 @@
    </property>
    <property name="text">
     <string>Domain:</string>
-   </property>
-  </widget>
-  <widget class="QTextEdit" name="textEdit_ConnectionServer">
-   <property name="geometry">
-    <rect>
-     <x>121</x>
-     <y>380</y>
-     <width>329</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Arial</family>
-     <pointsize>12</pointsize>
-    </font>
-   </property>
-   <property name="verticalScrollBarPolicy">
-    <enum>Qt::ScrollBarAlwaysOff</enum>
-   </property>
-   <property name="horizontalScrollBarPolicy">
-    <enum>Qt::ScrollBarAlwaysOff</enum>
-   </property>
-   <property name="undoRedoEnabled">
-    <bool>true</bool>
    </property>
   </widget>
   <widget class="QLabel" name="label_ConnectionServer">
@@ -1465,31 +1390,6 @@
     <string>Connection Port:</string>
    </property>
   </widget>
-  <widget class="QTextEdit" name="textEdit_ConnectionPort">
-   <property name="geometry">
-    <rect>
-     <x>121</x>
-     <y>450</y>
-     <width>329</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Arial</family>
-     <pointsize>12</pointsize>
-    </font>
-   </property>
-   <property name="verticalScrollBarPolicy">
-    <enum>Qt::ScrollBarAlwaysOff</enum>
-   </property>
-   <property name="horizontalScrollBarPolicy">
-    <enum>Qt::ScrollBarAlwaysOff</enum>
-   </property>
-   <property name="undoRedoEnabled">
-    <bool>true</bool>
-   </property>
-  </widget>
   <widget class="QLabel" name="label_Username">
    <property name="geometry">
     <rect>
@@ -1506,31 +1406,6 @@
    </property>
    <property name="text">
     <string>Username:</string>
-   </property>
-  </widget>
-  <widget class="QTextEdit" name="textEdit_Username">
-   <property name="geometry">
-    <rect>
-     <x>121</x>
-     <y>102</y>
-     <width>329</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Arial</family>
-     <pointsize>12</pointsize>
-    </font>
-   </property>
-   <property name="verticalScrollBarPolicy">
-    <enum>Qt::ScrollBarAlwaysOff</enum>
-   </property>
-   <property name="horizontalScrollBarPolicy">
-    <enum>Qt::ScrollBarAlwaysOff</enum>
-   </property>
-   <property name="undoRedoEnabled">
-    <bool>true</bool>
    </property>
   </widget>
   <widget class="QLabel" name="label_Password">
@@ -1554,12 +1429,12 @@
     <string>Password:</string>
    </property>
   </widget>
-  <widget class="QTextEdit" name="textEdit_Password">
+  <widget class="QLineEdit" name="lineEdit_Username">
    <property name="geometry">
     <rect>
-     <x>121</x>
-     <y>170</y>
-     <width>329</width>
+     <x>120</x>
+     <y>100</y>
+     <width>330</width>
      <height>32</height>
     </rect>
    </property>
@@ -1569,17 +1444,134 @@
      <pointsize>12</pointsize>
     </font>
    </property>
-   <property name="verticalScrollBarPolicy">
-    <enum>Qt::ScrollBarAlwaysOff</enum>
+   <property name="styleSheet">
+    <string notr="true">QLineEdit{
+	color: white;
+	background: black;
+}</string>
    </property>
-   <property name="horizontalScrollBarPolicy">
-    <enum>Qt::ScrollBarAlwaysOff</enum>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_ConnectionServer">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>380</y>
+     <width>330</width>
+     <height>32</height>
+    </rect>
    </property>
-   <property name="undoRedoEnabled">
-    <bool>true</bool>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLineEdit{
+	color: white;
+	background: black;
+}</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_Domain">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>310</y>
+     <width>330</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLineEdit{
+	color: white;
+	background: black;
+}</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_ConfirmPassword">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>240</y>
+     <width>330</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLineEdit{
+	color: white;
+	background: black;
+}</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_Password">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>170</y>
+     <width>330</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLineEdit{
+	color: white;
+	background: black;
+}</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_ConnectionPort">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>450</y>
+     <width>330</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLineEdit{
+	color: white;
+	background: black;
+}</string>
    </property>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>lineEdit_Username</tabstop>
+  <tabstop>lineEdit_Password</tabstop>
+  <tabstop>lineEdit_ConfirmPassword</tabstop>
+  <tabstop>lineEdit_Domain</tabstop>
+  <tabstop>lineEdit_ConnectionServer</tabstop>
+  <tabstop>lineEdit_ConnectionPort</tabstop>
+  <tabstop>pushButton_CreateAccount2</tabstop>
+  <tabstop>pushButton_Back</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

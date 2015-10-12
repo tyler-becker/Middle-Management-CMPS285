@@ -17,12 +17,14 @@ cove_menu::~cove_menu()
     delete ui;
 }
 
+//displays login window
 void cove_menu::on_pushButton_Back_clicked()
 {
     newCoveLoginWindow = new cove_login(this);
     this->hide();
 }
 
+//displays chat window
 void cove_menu::on_pushButton_GeneralChat_clicked()
 {
     newCoveChatWindow = new cove_chat(this);

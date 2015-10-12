@@ -13,3 +13,10 @@ cove_chat::~cove_chat()
 {
     delete ui;
 }
+
+//creates chat messages in chat window
+void cove_chat::on_pushButton_Send_clicked()
+{
+    QString text=ui->lineEdit_ChatTypeField->text();
+    ui->listWidget_ChatDisplay->addItem(QString("Username") + QString("@example.com") + QString(" >> ") + QString(text));                     
+}

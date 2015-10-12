@@ -1344,36 +1344,6 @@
      <string>Create Account</string>
     </property>
    </widget>
-   <widget class="QTextEdit" name="textEdit_Account">
-    <property name="geometry">
-     <rect>
-      <x>151</x>
-      <y>251</y>
-      <width>269</width>
-      <height>32</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>12</pointsize>
-     </font>
-    </property>
-    <property name="verticalScrollBarPolicy">
-     <enum>Qt::ScrollBarAlwaysOff</enum>
-    </property>
-    <property name="horizontalScrollBarPolicy">
-     <enum>Qt::ScrollBarAlwaysOff</enum>
-    </property>
-    <property name="tabChangesFocus">
-     <bool>true</bool>
-    </property>
-    <property name="undoRedoEnabled">
-     <bool>true</bool>
-    </property>
-    <property name="lineWrapMode">
-     <enum>QTextEdit::WidgetWidth</enum>
-    </property>
-   </widget>
    <widget class="QLabel" name="label__Username">
     <property name="geometry">
      <rect>
@@ -1410,42 +1380,6 @@
      <string>Password:</string>
     </property>
    </widget>
-   <widget class="QTextEdit" name="textEdit_Password">
-    <property name="geometry">
-     <rect>
-      <x>151</x>
-      <y>320</y>
-      <width>269</width>
-      <height>32</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>12</pointsize>
-     </font>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::StyledPanel</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Sunken</enum>
-    </property>
-    <property name="verticalScrollBarPolicy">
-     <enum>Qt::ScrollBarAlwaysOff</enum>
-    </property>
-    <property name="horizontalScrollBarPolicy">
-     <enum>Qt::ScrollBarAlwaysOff</enum>
-    </property>
-    <property name="tabChangesFocus">
-     <bool>true</bool>
-    </property>
-    <property name="readOnly">
-     <bool>false</bool>
-    </property>
-    <property name="overwriteMode">
-     <bool>false</bool>
-    </property>
-   </widget>
    <widget class="QLabel" name="label_LoginLogo">
     <property name="geometry">
      <rect>
@@ -1462,21 +1396,81 @@
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <zorder>textEdit_Account</zorder>
+   <widget class="QLineEdit" name="lineEdit_Password">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>320</y>
+      <width>270</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLineEdit{
+	color: white;
+	background: black;
+}</string>
+    </property>
+    <property name="maxLength">
+     <number>50</number>
+    </property>
+    <property name="frame">
+     <bool>true</bool>
+    </property>
+    <property name="echoMode">
+     <enum>QLineEdit::Password</enum>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_Account">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>250</y>
+      <width>270</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLineEdit{
+	color: white;
+	background: black;
+}</string>
+    </property>
+    <property name="maxLength">
+     <number>50</number>
+    </property>
+    <property name="frame">
+     <bool>true</bool>
+    </property>
+    <property name="echoMode">
+     <enum>QLineEdit::Normal</enum>
+    </property>
+   </widget>
    <zorder>label__Username</zorder>
    <zorder>label_Password</zorder>
-   <zorder>textEdit_Password</zorder>
    <zorder>label_Cove</zorder>
    <zorder>pushButton_CreateAccount</zorder>
    <zorder>pushButton_LogIn</zorder>
    <zorder>label_LoginLogo</zorder>
+   <zorder>lineEdit_Password</zorder>
+   <zorder>lineEdit_Account</zorder>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <tabstops>
-  <tabstop>textEdit_Account</tabstop>
-  <tabstop>textEdit_Password</tabstop>
+  <tabstop>lineEdit_Account</tabstop>
+  <tabstop>lineEdit_Password</tabstop>
   <tabstop>pushButton_LogIn</tabstop>
   <tabstop>pushButton_CreateAccount</tabstop>
  </tabstops>

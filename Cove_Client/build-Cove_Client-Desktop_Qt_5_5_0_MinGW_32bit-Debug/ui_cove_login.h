@@ -15,10 +15,10 @@
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
-#include <QtWidgets/QTextEdit>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -30,11 +30,11 @@ public:
     QPushButton *pushButton_LogIn;
     QLabel *label_Cove;
     QPushButton *pushButton_CreateAccount;
-    QTextEdit *textEdit_Account;
     QLabel *label__Username;
     QLabel *label_Password;
-    QTextEdit *textEdit_Password;
     QLabel *label_LoginLogo;
+    QLineEdit *lineEdit_Password;
+    QLineEdit *lineEdit_Account;
     QStatusBar *statusBar;
 
     void setupUi(QMainWindow *cove_login)
@@ -242,15 +242,6 @@ public:
         pushButton_CreateAccount->setPalette(palette2);
         pushButton_CreateAccount->setFont(font1);
         pushButton_CreateAccount->setAutoFillBackground(false);
-        textEdit_Account = new QTextEdit(centralWidget);
-        textEdit_Account->setObjectName(QStringLiteral("textEdit_Account"));
-        textEdit_Account->setGeometry(QRect(151, 251, 269, 32));
-        textEdit_Account->setFont(font1);
-        textEdit_Account->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-        textEdit_Account->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-        textEdit_Account->setTabChangesFocus(true);
-        textEdit_Account->setUndoRedoEnabled(true);
-        textEdit_Account->setLineWrapMode(QTextEdit::WidgetWidth);
         label__Username = new QLabel(centralWidget);
         label__Username->setObjectName(QStringLiteral("label__Username"));
         label__Username->setGeometry(QRect(151, 221, 95, 23));
@@ -259,35 +250,46 @@ public:
         label_Password->setObjectName(QStringLiteral("label_Password"));
         label_Password->setGeometry(QRect(151, 290, 94, 23));
         label_Password->setFont(font1);
-        textEdit_Password = new QTextEdit(centralWidget);
-        textEdit_Password->setObjectName(QStringLiteral("textEdit_Password"));
-        textEdit_Password->setGeometry(QRect(151, 320, 269, 32));
-        textEdit_Password->setFont(font1);
-        textEdit_Password->setFrameShape(QFrame::StyledPanel);
-        textEdit_Password->setFrameShadow(QFrame::Sunken);
-        textEdit_Password->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-        textEdit_Password->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-        textEdit_Password->setTabChangesFocus(true);
-        textEdit_Password->setReadOnly(false);
-        textEdit_Password->setOverwriteMode(false);
         label_LoginLogo = new QLabel(centralWidget);
         label_LoginLogo->setObjectName(QStringLiteral("label_LoginLogo"));
         label_LoginLogo->setGeometry(QRect(235, 100, 100, 100));
         label_LoginLogo->setAlignment(Qt::AlignCenter);
+        lineEdit_Password = new QLineEdit(centralWidget);
+        lineEdit_Password->setObjectName(QStringLiteral("lineEdit_Password"));
+        lineEdit_Password->setGeometry(QRect(150, 320, 270, 32));
+        lineEdit_Password->setFont(font1);
+        lineEdit_Password->setStyleSheet(QLatin1String("QLineEdit{\n"
+"	color: white;\n"
+"	background: black;\n"
+"}"));
+        lineEdit_Password->setMaxLength(50);
+        lineEdit_Password->setFrame(true);
+        lineEdit_Password->setEchoMode(QLineEdit::Password);
+        lineEdit_Account = new QLineEdit(centralWidget);
+        lineEdit_Account->setObjectName(QStringLiteral("lineEdit_Account"));
+        lineEdit_Account->setGeometry(QRect(150, 250, 270, 32));
+        lineEdit_Account->setFont(font1);
+        lineEdit_Account->setStyleSheet(QLatin1String("QLineEdit{\n"
+"	color: white;\n"
+"	background: black;\n"
+"}"));
+        lineEdit_Account->setMaxLength(50);
+        lineEdit_Account->setFrame(true);
+        lineEdit_Account->setEchoMode(QLineEdit::Normal);
         cove_login->setCentralWidget(centralWidget);
-        textEdit_Account->raise();
         label__Username->raise();
         label_Password->raise();
-        textEdit_Password->raise();
         label_Cove->raise();
         pushButton_CreateAccount->raise();
         pushButton_LogIn->raise();
         label_LoginLogo->raise();
+        lineEdit_Password->raise();
+        lineEdit_Account->raise();
         statusBar = new QStatusBar(cove_login);
         statusBar->setObjectName(QStringLiteral("statusBar"));
         cove_login->setStatusBar(statusBar);
-        QWidget::setTabOrder(textEdit_Account, textEdit_Password);
-        QWidget::setTabOrder(textEdit_Password, pushButton_LogIn);
+        QWidget::setTabOrder(lineEdit_Account, lineEdit_Password);
+        QWidget::setTabOrder(lineEdit_Password, pushButton_LogIn);
         QWidget::setTabOrder(pushButton_LogIn, pushButton_CreateAccount);
 
         retranslateUi(cove_login);

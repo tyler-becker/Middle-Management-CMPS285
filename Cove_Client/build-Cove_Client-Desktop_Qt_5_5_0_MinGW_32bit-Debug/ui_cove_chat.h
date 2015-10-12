@@ -15,10 +15,9 @@
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QHeaderView>
+#include <QtWidgets/QLineEdit>
+#include <QtWidgets/QListWidget>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QTabWidget>
-#include <QtWidgets/QTextEdit>
-#include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
 
@@ -28,11 +27,10 @@ public:
     QPushButton *pushButton_ChatOptions;
     QPushButton *pushButton_Send;
     QPushButton *pushButton_TextOptions;
-    QTabWidget *tabWidget_ChatDisplay;
-    QWidget *tab_1;
-    QWidget *tab_2;
     QPushButton *pushButton_Insert;
-    QTextEdit *textEdit_ChatTypeField;
+    QListWidget *listWidget_ChatDisplay;
+    QLineEdit *lineEdit_ChatTypeField;
+    QPushButton *pushButton_dotdotdot;
 
     void setupUi(QDialog *cove_chat)
     {
@@ -121,7 +119,7 @@ public:
         pushButton_ChatOptions->setAutoDefault(false);
         pushButton_Send = new QPushButton(cove_chat);
         pushButton_Send->setObjectName(QStringLiteral("pushButton_Send"));
-        pushButton_Send->setGeometry(QRect(355, 640, 132, 65));
+        pushButton_Send->setGeometry(QRect(355, 640, 136, 65));
         QPalette palette2;
         QBrush brush8(QColor(6, 0, 83, 255));
         brush8.setStyle(Qt::SolidPattern);
@@ -146,60 +144,92 @@ public:
         pushButton_TextOptions->setPalette(palette3);
         pushButton_TextOptions->setFont(font);
         pushButton_TextOptions->setAutoDefault(false);
-        tabWidget_ChatDisplay = new QTabWidget(cove_chat);
-        tabWidget_ChatDisplay->setObjectName(QStringLiteral("tabWidget_ChatDisplay"));
-        tabWidget_ChatDisplay->setGeometry(QRect(85, 40, 400, 550));
-        QPalette palette4;
-        palette4.setBrush(QPalette::Active, QPalette::WindowText, brush6);
-        palette4.setBrush(QPalette::Active, QPalette::Text, brush6);
-        palette4.setBrush(QPalette::Active, QPalette::BrightText, brush6);
-        palette4.setBrush(QPalette::Active, QPalette::ButtonText, brush6);
-        palette4.setBrush(QPalette::Active, QPalette::HighlightedText, brush6);
-        palette4.setBrush(QPalette::Inactive, QPalette::WindowText, brush6);
-        palette4.setBrush(QPalette::Inactive, QPalette::Text, brush6);
-        palette4.setBrush(QPalette::Inactive, QPalette::BrightText, brush6);
-        palette4.setBrush(QPalette::Inactive, QPalette::ButtonText, brush6);
-        palette4.setBrush(QPalette::Inactive, QPalette::HighlightedText, brush6);
-        palette4.setBrush(QPalette::Disabled, QPalette::WindowText, brush4);
-        palette4.setBrush(QPalette::Disabled, QPalette::Text, brush4);
-        palette4.setBrush(QPalette::Disabled, QPalette::BrightText, brush6);
-        palette4.setBrush(QPalette::Disabled, QPalette::ButtonText, brush4);
-        palette4.setBrush(QPalette::Disabled, QPalette::HighlightedText, brush6);
-        tabWidget_ChatDisplay->setPalette(palette4);
-        QFont font2;
-        font2.setFamily(QStringLiteral("Arial"));
-        font2.setPointSize(10);
-        tabWidget_ChatDisplay->setFont(font2);
-        tabWidget_ChatDisplay->setTabsClosable(false);
-        tabWidget_ChatDisplay->setMovable(false);
-        tab_1 = new QWidget();
-        tab_1->setObjectName(QStringLiteral("tab_1"));
-        tabWidget_ChatDisplay->addTab(tab_1, QString());
-        tab_2 = new QWidget();
-        tab_2->setObjectName(QStringLiteral("tab_2"));
-        tabWidget_ChatDisplay->addTab(tab_2, QString());
         pushButton_Insert = new QPushButton(cove_chat);
         pushButton_Insert->setObjectName(QStringLiteral("pushButton_Insert"));
         pushButton_Insert->setGeometry(QRect(85, 600, 100, 30));
-        QPalette palette5;
-        palette5.setBrush(QPalette::Active, QPalette::WindowText, brush6);
-        palette5.setBrush(QPalette::Active, QPalette::ButtonText, brush6);
-        palette5.setBrush(QPalette::Inactive, QPalette::WindowText, brush6);
-        palette5.setBrush(QPalette::Inactive, QPalette::ButtonText, brush6);
-        palette5.setBrush(QPalette::Disabled, QPalette::WindowText, brush4);
-        palette5.setBrush(QPalette::Disabled, QPalette::ButtonText, brush4);
-        pushButton_Insert->setPalette(palette5);
+        QPalette palette4;
+        palette4.setBrush(QPalette::Active, QPalette::WindowText, brush6);
+        palette4.setBrush(QPalette::Active, QPalette::ButtonText, brush6);
+        palette4.setBrush(QPalette::Inactive, QPalette::WindowText, brush6);
+        palette4.setBrush(QPalette::Inactive, QPalette::ButtonText, brush6);
+        palette4.setBrush(QPalette::Disabled, QPalette::WindowText, brush4);
+        palette4.setBrush(QPalette::Disabled, QPalette::ButtonText, brush4);
+        pushButton_Insert->setPalette(palette4);
         pushButton_Insert->setFont(font);
         pushButton_Insert->setAutoDefault(false);
-        textEdit_ChatTypeField = new QTextEdit(cove_chat);
-        textEdit_ChatTypeField->setObjectName(QStringLiteral("textEdit_ChatTypeField"));
-        textEdit_ChatTypeField->setGeometry(QRect(85, 640, 260, 65));
-        textEdit_ChatTypeField->setFont(font2);
+        listWidget_ChatDisplay = new QListWidget(cove_chat);
+        listWidget_ChatDisplay->setObjectName(QStringLiteral("listWidget_ChatDisplay"));
+        listWidget_ChatDisplay->setGeometry(QRect(80, 40, 410, 550));
+        QFont font2;
+        font2.setFamily(QStringLiteral("Arial"));
+        font2.setPointSize(12);
+        font2.setBold(true);
+        font2.setWeight(75);
+        listWidget_ChatDisplay->setFont(font2);
+        listWidget_ChatDisplay->setProperty("showDropIndicator", QVariant(false));
+        listWidget_ChatDisplay->setProperty("isWrapping", QVariant(true));
+        listWidget_ChatDisplay->setWordWrap(true);
+        lineEdit_ChatTypeField = new QLineEdit(cove_chat);
+        lineEdit_ChatTypeField->setObjectName(QStringLiteral("lineEdit_ChatTypeField"));
+        lineEdit_ChatTypeField->setGeometry(QRect(85, 640, 260, 65));
+        QPalette palette5;
+        palette5.setBrush(QPalette::Active, QPalette::WindowText, brush);
+        palette5.setBrush(QPalette::Active, QPalette::Button, brush6);
+        palette5.setBrush(QPalette::Active, QPalette::Text, brush);
+        palette5.setBrush(QPalette::Active, QPalette::BrightText, brush6);
+        palette5.setBrush(QPalette::Active, QPalette::ButtonText, brush);
+        palette5.setBrush(QPalette::Active, QPalette::Base, brush6);
+        palette5.setBrush(QPalette::Active, QPalette::Window, brush6);
+        palette5.setBrush(QPalette::Active, QPalette::ToolTipBase, brush6);
+        palette5.setBrush(QPalette::Inactive, QPalette::WindowText, brush);
+        palette5.setBrush(QPalette::Inactive, QPalette::Button, brush6);
+        palette5.setBrush(QPalette::Inactive, QPalette::Text, brush);
+        palette5.setBrush(QPalette::Inactive, QPalette::BrightText, brush6);
+        palette5.setBrush(QPalette::Inactive, QPalette::ButtonText, brush);
+        palette5.setBrush(QPalette::Inactive, QPalette::Base, brush6);
+        palette5.setBrush(QPalette::Inactive, QPalette::Window, brush6);
+        palette5.setBrush(QPalette::Inactive, QPalette::ToolTipBase, brush6);
+        palette5.setBrush(QPalette::Disabled, QPalette::WindowText, brush);
+        palette5.setBrush(QPalette::Disabled, QPalette::Button, brush6);
+        palette5.setBrush(QPalette::Disabled, QPalette::Text, brush);
+        palette5.setBrush(QPalette::Disabled, QPalette::BrightText, brush6);
+        palette5.setBrush(QPalette::Disabled, QPalette::ButtonText, brush);
+        palette5.setBrush(QPalette::Disabled, QPalette::Base, brush6);
+        palette5.setBrush(QPalette::Disabled, QPalette::Window, brush6);
+        palette5.setBrush(QPalette::Disabled, QPalette::ToolTipBase, brush6);
+        lineEdit_ChatTypeField->setPalette(palette5);
+        lineEdit_ChatTypeField->setFont(font1);
+        lineEdit_ChatTypeField->setAutoFillBackground(false);
+        lineEdit_ChatTypeField->setStyleSheet(QLatin1String("QLineEdit {\n"
+"	color: white;\n"
+"	background: black;\n"
+"}"));
+        lineEdit_ChatTypeField->setFrame(true);
+        lineEdit_ChatTypeField->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
+        pushButton_dotdotdot = new QPushButton(cove_chat);
+        pushButton_dotdotdot->setObjectName(QStringLiteral("pushButton_dotdotdot"));
+        pushButton_dotdotdot->setGeometry(QRect(415, 600, 76, 30));
+        QPalette palette6;
+        palette6.setBrush(QPalette::Active, QPalette::Text, brush6);
+        palette6.setBrush(QPalette::Active, QPalette::BrightText, brush6);
+        palette6.setBrush(QPalette::Active, QPalette::ButtonText, brush6);
+        palette6.setBrush(QPalette::Inactive, QPalette::Text, brush6);
+        palette6.setBrush(QPalette::Inactive, QPalette::BrightText, brush6);
+        palette6.setBrush(QPalette::Inactive, QPalette::ButtonText, brush6);
+        palette6.setBrush(QPalette::Disabled, QPalette::Text, brush4);
+        palette6.setBrush(QPalette::Disabled, QPalette::BrightText, brush6);
+        palette6.setBrush(QPalette::Disabled, QPalette::ButtonText, brush4);
+        pushButton_dotdotdot->setPalette(palette6);
+        pushButton_dotdotdot->setFont(font1);
+        pushButton_dotdotdot->setAutoFillBackground(false);
+        QWidget::setTabOrder(lineEdit_ChatTypeField, pushButton_Send);
+        QWidget::setTabOrder(pushButton_Send, pushButton_Insert);
+        QWidget::setTabOrder(pushButton_Insert, pushButton_TextOptions);
+        QWidget::setTabOrder(pushButton_TextOptions, pushButton_ChatOptions);
+        QWidget::setTabOrder(pushButton_ChatOptions, pushButton_dotdotdot);
+        QWidget::setTabOrder(pushButton_dotdotdot, listWidget_ChatDisplay);
 
         retranslateUi(cove_chat);
-
-        tabWidget_ChatDisplay->setCurrentIndex(0);
-
 
         QMetaObject::connectSlotsByName(cove_chat);
     } // setupUi
@@ -210,9 +240,8 @@ public:
         pushButton_ChatOptions->setText(QApplication::translate("cove_chat", "chat options", 0));
         pushButton_Send->setText(QApplication::translate("cove_chat", "Send", 0));
         pushButton_TextOptions->setText(QApplication::translate("cove_chat", "text options", 0));
-        tabWidget_ChatDisplay->setTabText(tabWidget_ChatDisplay->indexOf(tab_1), QApplication::translate("cove_chat", "General Chat (5)", 0));
-        tabWidget_ChatDisplay->setTabText(tabWidget_ChatDisplay->indexOf(tab_2), QApplication::translate("cove_chat", "PMs (1)", 0));
         pushButton_Insert->setText(QApplication::translate("cove_chat", "Insert", 0));
+        pushButton_dotdotdot->setText(QApplication::translate("cove_chat", "...", 0));
     } // retranslateUi
 
 };

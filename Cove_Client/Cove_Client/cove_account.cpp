@@ -15,12 +15,14 @@ cove_account::~cove_account()
     delete ui;
 }
 
+//displays login window
 void cove_account::on_pushButton_CreateAccount2_clicked()
 {
     newCoveLoginWindow = new cove_login(this);
     this->hide();
 }
 
+//displays login window
 void cove_account::on_pushButton_Back_clicked()
 {
     newCoveLoginWindow = new cove_login(this);

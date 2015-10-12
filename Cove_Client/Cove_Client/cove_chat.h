@@ -19,6 +19,9 @@ public:
     explicit cove_chat(QWidget *parent = 0);
     ~cove_chat();
 
+private slots:
+    void on_pushButton_Send_clicked();
+
 private:
     Ui::cove_chat *ui;
 
