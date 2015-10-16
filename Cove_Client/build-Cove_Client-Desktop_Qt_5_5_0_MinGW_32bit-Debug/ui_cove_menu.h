@@ -28,7 +28,7 @@ public:
     QPushButton *pushButton_Account;
     QPushButton *pushButton_MyChats;
     QPushButton *pushButton_PrivateChat;
-    QPushButton *pushButton_GameChat;
+    QPushButton *pushButton_SecureChat;
     QPushButton *pushButton_GeneralChat;
     QPushButton *pushButton_Back;
 
@@ -334,9 +334,9 @@ public:
         palette4.setBrush(QPalette::Disabled, QPalette::ToolTipText, brush6);
         pushButton_PrivateChat->setPalette(palette4);
         pushButton_PrivateChat->setFont(font1);
-        pushButton_GameChat = new QPushButton(cove_menu);
-        pushButton_GameChat->setObjectName(QStringLiteral("pushButton_GameChat"));
-        pushButton_GameChat->setGeometry(QRect(330, 100, 150, 130));
+        pushButton_SecureChat = new QPushButton(cove_menu);
+        pushButton_SecureChat->setObjectName(QStringLiteral("pushButton_SecureChat"));
+        pushButton_SecureChat->setGeometry(QRect(330, 100, 150, 130));
         QPalette palette5;
         palette5.setBrush(QPalette::Active, QPalette::WindowText, brush6);
         palette5.setBrush(QPalette::Active, QPalette::Button, brush8);
@@ -383,8 +383,8 @@ public:
         palette5.setBrush(QPalette::Disabled, QPalette::AlternateBase, brush8);
         palette5.setBrush(QPalette::Disabled, QPalette::ToolTipBase, brush7);
         palette5.setBrush(QPalette::Disabled, QPalette::ToolTipText, brush6);
-        pushButton_GameChat->setPalette(palette5);
-        pushButton_GameChat->setFont(font3);
+        pushButton_SecureChat->setPalette(palette5);
+        pushButton_SecureChat->setFont(font3);
         pushButton_GeneralChat = new QPushButton(cove_menu);
         pushButton_GeneralChat->setObjectName(QStringLiteral("pushButton_GeneralChat"));
         pushButton_GeneralChat->setGeometry(QRect(90, 100, 150, 130));
@@ -452,8 +452,8 @@ public:
         palette7.setBrush(QPalette::Disabled, QPalette::ButtonText, brush4);
         pushButton_Back->setPalette(palette7);
         pushButton_Back->setFont(font3);
-        QWidget::setTabOrder(pushButton_GeneralChat, pushButton_GameChat);
-        QWidget::setTabOrder(pushButton_GameChat, pushButton_PrivateChat);
+        QWidget::setTabOrder(pushButton_GeneralChat, pushButton_SecureChat);
+        QWidget::setTabOrder(pushButton_SecureChat, pushButton_PrivateChat);
         QWidget::setTabOrder(pushButton_PrivateChat, pushButton_MyChats);
         QWidget::setTabOrder(pushButton_MyChats, pushButton_CreateChat);
         QWidget::setTabOrder(pushButton_CreateChat, pushButton_Account);
@@ -471,7 +471,7 @@ public:
         pushButton_Account->setText(QApplication::translate("cove_menu", "Account", 0));
         pushButton_MyChats->setText(QApplication::translate("cove_menu", "My Chats", 0));
         pushButton_PrivateChat->setText(QApplication::translate("cove_menu", "Private Chat", 0));
-        pushButton_GameChat->setText(QApplication::translate("cove_menu", "Game Chat", 0));
+        pushButton_SecureChat->setText(QApplication::translate("cove_menu", "Secure Chat", 0));
         pushButton_GeneralChat->setText(QApplication::translate("cove_menu", "General Chat", 0));
         pushButton_Back->setText(QApplication::translate("cove_menu", "Back", 0));
     } // retranslateUi

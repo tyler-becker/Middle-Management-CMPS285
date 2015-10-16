@@ -34,7 +34,7 @@ public:
     QLabel *label_Password;
     QLabel *label_LoginLogo;
     QLineEdit *lineEdit_Password;
-    QLineEdit *lineEdit_Account;
+    QLineEdit *lineEdit_Username;
     QStatusBar *statusBar;
 
     void setupUi(QMainWindow *cove_login)
@@ -109,6 +109,7 @@ public:
         font.setFamily(QStringLiteral("Arial"));
         cove_login->setFont(font);
         cove_login->setMouseTracking(false);
+        cove_login->setAutoFillBackground(false);
         centralWidget = new QWidget(cove_login);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         pushButton_LogIn = new QPushButton(centralWidget);
@@ -258,24 +259,20 @@ public:
         lineEdit_Password->setObjectName(QStringLiteral("lineEdit_Password"));
         lineEdit_Password->setGeometry(QRect(150, 320, 270, 32));
         lineEdit_Password->setFont(font1);
-        lineEdit_Password->setStyleSheet(QLatin1String("QLineEdit{\n"
-"	color: white;\n"
-"	background: black;\n"
+        lineEdit_Password->setStyleSheet(QLatin1String("QLineEdit {\n"
+"	color: black;\n"
 "}"));
-        lineEdit_Password->setMaxLength(50);
-        lineEdit_Password->setFrame(true);
         lineEdit_Password->setEchoMode(QLineEdit::Password);
-        lineEdit_Account = new QLineEdit(centralWidget);
-        lineEdit_Account->setObjectName(QStringLiteral("lineEdit_Account"));
-        lineEdit_Account->setGeometry(QRect(150, 250, 270, 32));
-        lineEdit_Account->setFont(font1);
-        lineEdit_Account->setStyleSheet(QLatin1String("QLineEdit{\n"
-"	color: white;\n"
-"	background: black;\n"
+        lineEdit_Username = new QLineEdit(centralWidget);
+        lineEdit_Username->setObjectName(QStringLiteral("lineEdit_Username"));
+        lineEdit_Username->setGeometry(QRect(150, 250, 270, 32));
+        QFont font3;
+        font3.setFamily(QStringLiteral("Arial"));
+        font3.setPointSize(12);
+        lineEdit_Username->setFont(font3);
+        lineEdit_Username->setStyleSheet(QLatin1String("QLineEdit {\n"
+"	color: black;\n"
 "}"));
-        lineEdit_Account->setMaxLength(50);
-        lineEdit_Account->setFrame(true);
-        lineEdit_Account->setEchoMode(QLineEdit::Normal);
         cove_login->setCentralWidget(centralWidget);
         label__Username->raise();
         label_Password->raise();
@@ -284,11 +281,11 @@ public:
         pushButton_LogIn->raise();
         label_LoginLogo->raise();
         lineEdit_Password->raise();
-        lineEdit_Account->raise();
+        lineEdit_Username->raise();
         statusBar = new QStatusBar(cove_login);
         statusBar->setObjectName(QStringLiteral("statusBar"));
         cove_login->setStatusBar(statusBar);
-        QWidget::setTabOrder(lineEdit_Account, lineEdit_Password);
+        QWidget::setTabOrder(lineEdit_Username, lineEdit_Password);
         QWidget::setTabOrder(lineEdit_Password, pushButton_LogIn);
         QWidget::setTabOrder(pushButton_LogIn, pushButton_CreateAccount);
 

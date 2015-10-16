@@ -24,6 +24,10 @@ private slots:
 
     void on_pushButton_GeneralChat_clicked();
 
+    void on_pushButton_SecureChat_clicked();
+
+    void on_pushButton_PrivateChat_clicked();
+
 private:
     Ui::cove_menu *ui;
 

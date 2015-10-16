@@ -12,8 +12,8 @@ cove_login::cove_login(QWidget *parent) : QMainWindow(parent), ui(new Ui::cove_l
     this->setWindowFlags(this->windowFlags() & ~Qt::WindowMaximizeButtonHint);
 
     //Icon for Cove Login Window, commented out because PATH is not absolute.
-    //QPixmap pix("E:/School/General CMPS/Qt Projects/Cove_Client/SmallDino.PNG");
-    //ui->label_LoginLogo->setPixmap(pix);
+    QPixmap pix("E:/School/General CMPS/Qt Projects/Cove_Client/SmallDino.PNG");
+    ui->label_LoginLogo->setPixmap(pix);
 }
 
 cove_login::~cove_login()

@@ -199,6 +199,8 @@ public:
         palette5.setBrush(QPalette::Disabled, QPalette::ToolTipBase, brush6);
         lineEdit_ChatTypeField->setPalette(palette5);
         lineEdit_ChatTypeField->setFont(font1);
+        lineEdit_ChatTypeField->setMouseTracking(true);
+        lineEdit_ChatTypeField->setAcceptDrops(true);
         lineEdit_ChatTypeField->setAutoFillBackground(false);
         lineEdit_ChatTypeField->setStyleSheet(QLatin1String("QLineEdit {\n"
 "	color: white;\n"

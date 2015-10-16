@@ -2193,7 +2193,7 @@
     <string>Private Chat</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_GameChat">
+  <widget class="QPushButton" name="pushButton_SecureChat">
    <property name="geometry">
     <rect>
      <x>330</x>
@@ -2623,7 +2623,7 @@
     </font>
    </property>
    <property name="text">
-    <string>Game Chat</string>
+    <string>Secure Chat</string>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton_GeneralChat">
@@ -3144,7 +3144,7 @@
  </widget>
  <tabstops>
   <tabstop>pushButton_GeneralChat</tabstop>
-  <tabstop>pushButton_GameChat</tabstop>
+  <tabstop>pushButton_SecureChat</tabstop>
   <tabstop>pushButton_PrivateChat</tabstop>
   <tabstop>pushButton_MyChats</tabstop>
   <tabstop>pushButton_CreateChat</tabstop>

@@ -31,3 +31,15 @@ void cove_menu::on_pushButton_GeneralChat_clicked()
     newCoveChatWindow->show();
     //this->hide();
 }
+
+void cove_menu::on_pushButton_SecureChat_clicked()
+{
+    newCoveChatWindow = new cove_chat(this);
+    newCoveChatWindow->show();
+}
+
+void cove_menu::on_pushButton_PrivateChat_clicked()
+{
+    newCoveChatWindow = new cove_chat(this);
+    newCoveChatWindow->show();
+}
