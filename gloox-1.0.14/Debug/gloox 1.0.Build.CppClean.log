@@ -1,0 +1,115 @@
+c:\users\capta_000\desktop\gloox-1.0.14\debug\vc140.pdb
+c:\users\capta_000\desktop\gloox-1.0.14\debug\vc140.idb
+c:\users\capta_000\desktop\gloox-1.0.14\debug\softwareversion.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\stanza.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\stanzaextensionfactory.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\subscription.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\tag.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\tlsdefault.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\tlsgnutlsbase.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\tlsgnutlsclient.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\tlsgnutlsclientanon.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\tlsgnutlsserveranon.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\tlsopensslbase.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\tlsopensslclient.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\tlsopensslserver.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\tlsschannel.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\uniquemucroom.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\util.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\vcard.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\vcardmanager.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\vcardupdate.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\xhtmlim.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\prep.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\presence.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\privacyitem.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\privacymanager.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\privatexml.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\pubsubevent.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\pubsubitem.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\pubsubmanager.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\receipt.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\registration.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\rosteritem.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\rostermanager.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\search.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\sha.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\shim.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\simanager.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\siprofileft.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\socks5bytestream.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\socks5bytestreammanager.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\socks5bytestreamserver.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\inbandbytestream.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\instantmucroom.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\iodata.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\iq.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\jid.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\lastactivity.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\logsink.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\md5.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\message.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\messageevent.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\messageeventfilter.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\messagefilter.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\messagesession.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\mucmessagesession.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\mucroom.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\mutex.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\nickname.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\nonsaslauth.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\oob.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\parser.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\connectiontcpbase.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\connectiontcpclient.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\connectiontcpserver.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\connectiontls.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\dataform.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\dataformfield.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\dataformfieldcontainer.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\dataformitem.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\dataformreported.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\delayeddelivery.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\disco.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\dns.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\error.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\eventdispatcher.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\featureneg.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\flexoff.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\forward.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\gloox.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\gpgencrypted.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\gpgsigned.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\adhoc.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\amp.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\annotations.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\base64.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\bookmarkstorage.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\bot.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\capabilities.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\carbons.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\chatstate.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\chatstatefilter.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\client.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\clientbase.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\component.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\compressionzlib.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\connectionbosh.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\connectionhttpproxy.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\connectionsocks5proxy.obj
+c:\users\capta_000\desktop\gloox-1.0.14\debug\version.res
+c:\users\capta_000\desktop\gloox-1.0.14\debug\gloox 1.0.exp
+c:\users\capta_000\desktop\gloox-1.0.14\debug\gloox 1.0.pdb
+c:\users\capta_000\desktop\gloox-1.0.14\debug\gloox 1.0.tlog\cl.command.1.tlog
+c:\users\capta_000\desktop\gloox-1.0.14\debug\gloox 1.0.tlog\cl.read.1.tlog
+c:\users\capta_000\desktop\gloox-1.0.14\debug\gloox 1.0.tlog\cl.write.1.tlog
+c:\users\capta_000\desktop\gloox-1.0.14\debug\gloox 1.0.tlog\link-cvtres.read.1.tlog
+c:\users\capta_000\desktop\gloox-1.0.14\debug\gloox 1.0.tlog\link-cvtres.write.1.tlog
+c:\users\capta_000\desktop\gloox-1.0.14\debug\gloox 1.0.tlog\link-rc.read.1.tlog
+c:\users\capta_000\desktop\gloox-1.0.14\debug\gloox 1.0.tlog\link-rc.write.1.tlog
+c:\users\capta_000\desktop\gloox-1.0.14\debug\gloox 1.0.tlog\link.command.1.tlog
+c:\users\capta_000\desktop\gloox-1.0.14\debug\gloox 1.0.tlog\link.read.1.tlog
+c:\users\capta_000\desktop\gloox-1.0.14\debug\gloox 1.0.tlog\link.write.1.tlog
+c:\users\capta_000\desktop\gloox-1.0.14\debug\gloox 1.0.tlog\rc.command.1.tlog
+c:\users\capta_000\desktop\gloox-1.0.14\debug\gloox 1.0.tlog\rc.read.1.tlog
+c:\users\capta_000\desktop\gloox-1.0.14\debug\gloox 1.0.tlog\rc.write.1.tlog

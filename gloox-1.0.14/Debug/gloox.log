@@ -1,0 +1,111 @@
+﻿Build started 10/16/2015 3:33:30 PM.
+     1>Project "C:\Users\capta_000\Desktop\gloox-1.0.14\gloox.vcxproj" on node 2 (Build target(s)).
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(392,5): warning MSB8028: The intermediate directory (.\Debug\) contains files shared from another project (gloox-1.0.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(1189,5): warning MSB8012: TargetPath(C:\Users\capta_000\Desktop\gloox-1.0.14\.\Debug\gloox 1.0.exe) does not match the Linker's OutputFile property value (C:\Users\capta_000\Desktop\gloox-1.0.14\Debug\gloox.exe). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(1191,5): warning MSB8012: TargetName(gloox 1.0) does not match the Linker's OutputFile property value (gloox). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
+     1>Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:".\Debug\gloox.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:".\Debug\gloox 1.0.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\Debug\gloox 1.0.lib" /MACHINE:X86 /SAFESEH .\Debug\version.res
+         .\Debug\adhoc.obj
+         .\Debug\amp.obj
+         .\Debug\annotations.obj
+         .\Debug\atomicrefcount.obj
+         .\Debug\base64.obj
+         .\Debug\bookmarkstorage.obj
+         .\Debug\bot.obj
+         .\Debug\capabilities.obj
+         .\Debug\carbons.obj
+         .\Debug\chatstate.obj
+         .\Debug\chatstatefilter.obj
+         .\Debug\client.obj
+         .\Debug\clientbase.obj
+         .\Debug\component.obj
+         .\Debug\compressionzlib.obj
+         .\Debug\connectionbosh.obj
+         .\Debug\connectionhttpproxy.obj
+         .\Debug\connectionsocks5proxy.obj
+         .\Debug\connectiontcpbase.obj
+         .\Debug\connectiontcpclient.obj
+         .\Debug\connectiontcpserver.obj
+         .\Debug\connectiontls.obj
+         .\Debug\dataform.obj
+         .\Debug\dataformfield.obj
+         .\Debug\dataformfieldcontainer.obj
+         .\Debug\dataformitem.obj
+         .\Debug\dataformreported.obj
+         .\Debug\delayeddelivery.obj
+         .\Debug\disco.obj
+         .\Debug\dns.obj
+         .\Debug\error.obj
+         .\Debug\eventdispatcher.obj
+         .\Debug\featureneg.obj
+         .\Debug\flexoff.obj
+         .\Debug\forward.obj
+         .\Debug\gloox.obj
+         .\Debug\gpgencrypted.obj
+         .\Debug\gpgsigned.obj
+         .\Debug\inbandbytestream.obj
+         .\Debug\instantmucroom.obj
+         .\Debug\iodata.obj
+         .\Debug\iq.obj
+         .\Debug\jid.obj
+         .\Debug\lastactivity.obj
+         .\Debug\logsink.obj
+         .\Debug\md5.obj
+         .\Debug\message.obj
+         .\Debug\messageevent.obj
+         .\Debug\messageeventfilter.obj
+         .\Debug\messagefilter.obj
+         .\Debug\messagesession.obj
+         .\Debug\mucmessagesession.obj
+         .\Debug\mucroom.obj
+         .\Debug\mutex.obj
+         .\Debug\nickname.obj
+         .\Debug\nonsaslauth.obj
+         .\Debug\oob.obj
+         .\Debug\parser.obj
+         .\Debug\prep.obj
+         .\Debug\presence.obj
+         .\Debug\privacyitem.obj
+         .\Debug\privacymanager.obj
+         .\Debug\privatexml.obj
+         .\Debug\pubsubevent.obj
+         .\Debug\pubsubitem.obj
+         .\Debug\pubsubmanager.obj
+         .\Debug\receipt.obj
+         .\Debug\registration.obj
+         .\Debug\rosteritem.obj
+         .\Debug\rostermanager.obj
+         .\Debug\search.obj
+         .\Debug\sha.obj
+         .\Debug\shim.obj
+         .\Debug\simanager.obj
+         .\Debug\siprofileft.obj
+         .\Debug\socks5bytestream.obj
+         .\Debug\socks5bytestreammanager.obj
+         .\Debug\socks5bytestreamserver.obj
+         .\Debug\softwareversion.obj
+         .\Debug\stanza.obj
+         .\Debug\stanzaextensionfactory.obj
+         .\Debug\subscription.obj
+         .\Debug\tag.obj
+         .\Debug\tlsdefault.obj
+         .\Debug\tlsgnutlsbase.obj
+         .\Debug\tlsgnutlsclient.obj
+         .\Debug\tlsgnutlsclientanon.obj
+         .\Debug\tlsgnutlsserveranon.obj
+         .\Debug\tlsopensslbase.obj
+         .\Debug\tlsopensslclient.obj
+         .\Debug\tlsopensslserver.obj
+         .\Debug\tlsschannel.obj
+         .\Debug\uniquemucroom.obj
+         .\Debug\util.obj
+         .\Debug\vcard.obj
+         .\Debug\vcardmanager.obj
+         .\Debug\vcardupdate.obj
+         .\Debug\xhtmlim.obj
+         gloox.vcxproj -> C:\Users\capta_000\Desktop\gloox-1.0.14\.\Debug\gloox 1.0.exe
+     1>Done Building Project "C:\Users\capta_000\Desktop\gloox-1.0.14\gloox.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.25
