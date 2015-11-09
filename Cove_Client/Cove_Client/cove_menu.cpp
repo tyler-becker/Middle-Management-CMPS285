@@ -1,7 +1,11 @@
 #include "cove_account.h"
 #include "ui_cove_account.h"
-#include "cove_chat.h"
-#include "ui_cove_chat.h"
+#include "cove_generalchat.h"
+#include "ui_cove_generalchat.h"
+#include "cove_securechat.h"
+#include "ui_cove_securechat.h"
+#include "cove_privatechat.h"
+#include "ui_cove_privatechat.h"
 #include "cove_login.h"
 #include "ui_cove_login.h"
 #include "cove_menu.h"
@@ -17,29 +21,27 @@ cove_menu::~cove_menu()
     delete ui;
 }
 
-//displays login window
 void cove_menu::on_pushButton_Back_clicked()
 {
     newCoveLoginWindow = new cove_login(this);
     this->hide();
 }
 
-//displays chat window
 void cove_menu::on_pushButton_GeneralChat_clicked()
 {
-    newCoveChatWindow = new cove_chat(this);
-    newCoveChatWindow->show();
+    newGeneralChatWindow = new cove_generalchat(this);
+    newGeneralChatWindow->show();
     //this->hide();
 }
 
 void cove_menu::on_pushButton_SecureChat_clicked()
 {
-    newCoveChatWindow = new cove_chat(this);
-    newCoveChatWindow->show();
+    newSecureChatWindow = new cove_securechat(this);
+    newSecureChatWindow->show();
 }
 
 void cove_menu::on_pushButton_PrivateChat_clicked()
 {
-    newCoveChatWindow = new cove_chat(this);
-    newCoveChatWindow->show();
+    newPrivateChatWindow = new cove_privatechat(this);
+    newPrivateChatWindow->show();
 }

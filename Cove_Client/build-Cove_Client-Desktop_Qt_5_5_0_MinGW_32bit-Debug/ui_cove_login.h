@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'cove_login.ui'
 **
-** Created by: Qt User Interface Compiler version 5.5.0
+** Created by: Qt User Interface Compiler version 5.5.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -30,7 +30,7 @@ public:
     QPushButton *pushButton_LogIn;
     QLabel *label_Cove;
     QPushButton *pushButton_CreateAccount;
-    QLabel *label__Username;
+    QLabel *label_Username;
     QLabel *label_Password;
     QLabel *label_LoginLogo;
     QLineEdit *lineEdit_Password;
@@ -114,71 +114,88 @@ public:
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         pushButton_LogIn = new QPushButton(centralWidget);
         pushButton_LogIn->setObjectName(QStringLiteral("pushButton_LogIn"));
-        pushButton_LogIn->setGeometry(QRect(190, 370, 190, 45));
+        pushButton_LogIn->setGeometry(QRect(190, 380, 190, 45));
         QPalette palette1;
         palette1.setBrush(QPalette::Active, QPalette::WindowText, brush6);
-        QBrush brush8(QColor(170, 0, 255, 255));
+        palette1.setBrush(QPalette::Active, QPalette::Button, brush);
+        QBrush brush8(QColor(213, 127, 255, 255));
         brush8.setStyle(Qt::SolidPattern);
-        palette1.setBrush(QPalette::Active, QPalette::Button, brush8);
-        QBrush brush9(QColor(213, 127, 255, 255));
+        palette1.setBrush(QPalette::Active, QPalette::Light, brush8);
+        QBrush brush9(QColor(191, 63, 255, 255));
         brush9.setStyle(Qt::SolidPattern);
-        palette1.setBrush(QPalette::Active, QPalette::Light, brush9);
-        QBrush brush10(QColor(191, 63, 255, 255));
+        palette1.setBrush(QPalette::Active, QPalette::Midlight, brush9);
+        QBrush brush10(QColor(85, 0, 127, 255));
         brush10.setStyle(Qt::SolidPattern);
-        palette1.setBrush(QPalette::Active, QPalette::Midlight, brush10);
-        QBrush brush11(QColor(85, 0, 127, 255));
+        palette1.setBrush(QPalette::Active, QPalette::Dark, brush10);
+        QBrush brush11(QColor(113, 0, 170, 255));
         brush11.setStyle(Qt::SolidPattern);
-        palette1.setBrush(QPalette::Active, QPalette::Dark, brush11);
-        QBrush brush12(QColor(113, 0, 170, 255));
-        brush12.setStyle(Qt::SolidPattern);
-        palette1.setBrush(QPalette::Active, QPalette::Mid, brush12);
+        palette1.setBrush(QPalette::Active, QPalette::Mid, brush11);
         palette1.setBrush(QPalette::Active, QPalette::Text, brush6);
         palette1.setBrush(QPalette::Active, QPalette::BrightText, brush);
         palette1.setBrush(QPalette::Active, QPalette::ButtonText, brush6);
         palette1.setBrush(QPalette::Active, QPalette::Base, brush);
-        palette1.setBrush(QPalette::Active, QPalette::Window, brush8);
+        palette1.setBrush(QPalette::Active, QPalette::Window, brush);
         palette1.setBrush(QPalette::Active, QPalette::Shadow, brush6);
-        QBrush brush13(QColor(212, 127, 255, 255));
-        brush13.setStyle(Qt::SolidPattern);
-        palette1.setBrush(QPalette::Active, QPalette::AlternateBase, brush13);
+        palette1.setBrush(QPalette::Active, QPalette::Highlight, brush6);
+        palette1.setBrush(QPalette::Active, QPalette::HighlightedText, brush);
+        palette1.setBrush(QPalette::Active, QPalette::AlternateBase, brush);
         palette1.setBrush(QPalette::Active, QPalette::ToolTipBase, brush7);
         palette1.setBrush(QPalette::Active, QPalette::ToolTipText, brush6);
         palette1.setBrush(QPalette::Inactive, QPalette::WindowText, brush6);
-        palette1.setBrush(QPalette::Inactive, QPalette::Button, brush8);
-        palette1.setBrush(QPalette::Inactive, QPalette::Light, brush9);
-        palette1.setBrush(QPalette::Inactive, QPalette::Midlight, brush10);
-        palette1.setBrush(QPalette::Inactive, QPalette::Dark, brush11);
-        palette1.setBrush(QPalette::Inactive, QPalette::Mid, brush12);
+        palette1.setBrush(QPalette::Inactive, QPalette::Button, brush);
+        palette1.setBrush(QPalette::Inactive, QPalette::Light, brush8);
+        palette1.setBrush(QPalette::Inactive, QPalette::Midlight, brush9);
+        palette1.setBrush(QPalette::Inactive, QPalette::Dark, brush10);
+        palette1.setBrush(QPalette::Inactive, QPalette::Mid, brush11);
         palette1.setBrush(QPalette::Inactive, QPalette::Text, brush6);
         palette1.setBrush(QPalette::Inactive, QPalette::BrightText, brush);
         palette1.setBrush(QPalette::Inactive, QPalette::ButtonText, brush6);
         palette1.setBrush(QPalette::Inactive, QPalette::Base, brush);
-        palette1.setBrush(QPalette::Inactive, QPalette::Window, brush8);
+        palette1.setBrush(QPalette::Inactive, QPalette::Window, brush);
         palette1.setBrush(QPalette::Inactive, QPalette::Shadow, brush6);
-        palette1.setBrush(QPalette::Inactive, QPalette::AlternateBase, brush13);
+        palette1.setBrush(QPalette::Inactive, QPalette::Highlight, brush6);
+        palette1.setBrush(QPalette::Inactive, QPalette::HighlightedText, brush);
+        palette1.setBrush(QPalette::Inactive, QPalette::AlternateBase, brush);
         palette1.setBrush(QPalette::Inactive, QPalette::ToolTipBase, brush7);
         palette1.setBrush(QPalette::Inactive, QPalette::ToolTipText, brush6);
-        palette1.setBrush(QPalette::Disabled, QPalette::WindowText, brush11);
-        palette1.setBrush(QPalette::Disabled, QPalette::Button, brush8);
-        palette1.setBrush(QPalette::Disabled, QPalette::Light, brush9);
-        palette1.setBrush(QPalette::Disabled, QPalette::Midlight, brush10);
-        palette1.setBrush(QPalette::Disabled, QPalette::Dark, brush11);
-        palette1.setBrush(QPalette::Disabled, QPalette::Mid, brush12);
-        palette1.setBrush(QPalette::Disabled, QPalette::Text, brush11);
+        palette1.setBrush(QPalette::Disabled, QPalette::WindowText, brush6);
+        palette1.setBrush(QPalette::Disabled, QPalette::Button, brush);
+        palette1.setBrush(QPalette::Disabled, QPalette::Light, brush8);
+        palette1.setBrush(QPalette::Disabled, QPalette::Midlight, brush9);
+        palette1.setBrush(QPalette::Disabled, QPalette::Dark, brush10);
+        palette1.setBrush(QPalette::Disabled, QPalette::Mid, brush11);
+        palette1.setBrush(QPalette::Disabled, QPalette::Text, brush6);
         palette1.setBrush(QPalette::Disabled, QPalette::BrightText, brush);
-        palette1.setBrush(QPalette::Disabled, QPalette::ButtonText, brush11);
-        palette1.setBrush(QPalette::Disabled, QPalette::Base, brush8);
-        palette1.setBrush(QPalette::Disabled, QPalette::Window, brush8);
+        palette1.setBrush(QPalette::Disabled, QPalette::ButtonText, brush6);
+        palette1.setBrush(QPalette::Disabled, QPalette::Base, brush);
+        palette1.setBrush(QPalette::Disabled, QPalette::Window, brush);
         palette1.setBrush(QPalette::Disabled, QPalette::Shadow, brush6);
-        palette1.setBrush(QPalette::Disabled, QPalette::AlternateBase, brush8);
+        palette1.setBrush(QPalette::Disabled, QPalette::Highlight, brush6);
+        palette1.setBrush(QPalette::Disabled, QPalette::HighlightedText, brush);
+        palette1.setBrush(QPalette::Disabled, QPalette::AlternateBase, brush);
         palette1.setBrush(QPalette::Disabled, QPalette::ToolTipBase, brush7);
         palette1.setBrush(QPalette::Disabled, QPalette::ToolTipText, brush6);
         pushButton_LogIn->setPalette(palette1);
         QFont font1;
+        font1.setFamily(QStringLiteral("Arial"));
         font1.setPointSize(12);
+        font1.setBold(false);
+        font1.setItalic(false);
+        font1.setWeight(50);
         pushButton_LogIn->setFont(font1);
         pushButton_LogIn->setAutoFillBackground(false);
-        pushButton_LogIn->setStyleSheet(QStringLiteral(""));
+        pushButton_LogIn->setStyleSheet(QLatin1String("QPushButton{\n"
+"	color: black;;\n"
+"	background-color: white;\n"
+"	alternate-background-color: white;\n"
+"	font: 12pt \"Arial\";\n"
+"	selection-color: white;\n"
+"	selection-background-color: black;\n"
+"	border: 1px solid black;\n"
+"}\n"
+"QPushButton:hover{\n"
+"	border: 2px solid black;\n"
+"}"));
         label_Cove = new QLabel(centralWidget);
         label_Cove->setObjectName(QStringLiteral("label_Cove"));
         label_Cove->setGeometry(QRect(220, 30, 130, 50));
@@ -188,69 +205,98 @@ public:
         font2.setWeight(75);
         label_Cove->setFont(font2);
         label_Cove->setLayoutDirection(Qt::LeftToRight);
+        label_Cove->setStyleSheet(QLatin1String("QLabel{\n"
+"	color: white;\n"
+"}"));
         label_Cove->setFrameShape(QFrame::NoFrame);
         label_Cove->setTextFormat(Qt::AutoText);
         label_Cove->setAlignment(Qt::AlignCenter);
         pushButton_CreateAccount = new QPushButton(centralWidget);
         pushButton_CreateAccount->setObjectName(QStringLiteral("pushButton_CreateAccount"));
-        pushButton_CreateAccount->setGeometry(QRect(190, 430, 190, 45));
+        pushButton_CreateAccount->setGeometry(QRect(190, 440, 190, 45));
         QPalette palette2;
         palette2.setBrush(QPalette::Active, QPalette::WindowText, brush6);
-        palette2.setBrush(QPalette::Active, QPalette::Button, brush8);
-        palette2.setBrush(QPalette::Active, QPalette::Light, brush9);
-        palette2.setBrush(QPalette::Active, QPalette::Midlight, brush10);
-        palette2.setBrush(QPalette::Active, QPalette::Dark, brush11);
-        palette2.setBrush(QPalette::Active, QPalette::Mid, brush12);
+        palette2.setBrush(QPalette::Active, QPalette::Button, brush);
+        palette2.setBrush(QPalette::Active, QPalette::Light, brush8);
+        palette2.setBrush(QPalette::Active, QPalette::Midlight, brush9);
+        palette2.setBrush(QPalette::Active, QPalette::Dark, brush10);
+        palette2.setBrush(QPalette::Active, QPalette::Mid, brush11);
         palette2.setBrush(QPalette::Active, QPalette::Text, brush6);
         palette2.setBrush(QPalette::Active, QPalette::BrightText, brush);
         palette2.setBrush(QPalette::Active, QPalette::ButtonText, brush6);
         palette2.setBrush(QPalette::Active, QPalette::Base, brush);
-        palette2.setBrush(QPalette::Active, QPalette::Window, brush8);
+        palette2.setBrush(QPalette::Active, QPalette::Window, brush);
         palette2.setBrush(QPalette::Active, QPalette::Shadow, brush6);
-        palette2.setBrush(QPalette::Active, QPalette::AlternateBase, brush13);
+        palette2.setBrush(QPalette::Active, QPalette::Highlight, brush6);
+        palette2.setBrush(QPalette::Active, QPalette::HighlightedText, brush);
+        palette2.setBrush(QPalette::Active, QPalette::AlternateBase, brush);
         palette2.setBrush(QPalette::Active, QPalette::ToolTipBase, brush7);
         palette2.setBrush(QPalette::Active, QPalette::ToolTipText, brush6);
         palette2.setBrush(QPalette::Inactive, QPalette::WindowText, brush6);
-        palette2.setBrush(QPalette::Inactive, QPalette::Button, brush8);
-        palette2.setBrush(QPalette::Inactive, QPalette::Light, brush9);
-        palette2.setBrush(QPalette::Inactive, QPalette::Midlight, brush10);
-        palette2.setBrush(QPalette::Inactive, QPalette::Dark, brush11);
-        palette2.setBrush(QPalette::Inactive, QPalette::Mid, brush12);
+        palette2.setBrush(QPalette::Inactive, QPalette::Button, brush);
+        palette2.setBrush(QPalette::Inactive, QPalette::Light, brush8);
+        palette2.setBrush(QPalette::Inactive, QPalette::Midlight, brush9);
+        palette2.setBrush(QPalette::Inactive, QPalette::Dark, brush10);
+        palette2.setBrush(QPalette::Inactive, QPalette::Mid, brush11);
         palette2.setBrush(QPalette::Inactive, QPalette::Text, brush6);
         palette2.setBrush(QPalette::Inactive, QPalette::BrightText, brush);
         palette2.setBrush(QPalette::Inactive, QPalette::ButtonText, brush6);
         palette2.setBrush(QPalette::Inactive, QPalette::Base, brush);
-        palette2.setBrush(QPalette::Inactive, QPalette::Window, brush8);
+        palette2.setBrush(QPalette::Inactive, QPalette::Window, brush);
         palette2.setBrush(QPalette::Inactive, QPalette::Shadow, brush6);
-        palette2.setBrush(QPalette::Inactive, QPalette::AlternateBase, brush13);
+        palette2.setBrush(QPalette::Inactive, QPalette::Highlight, brush6);
+        palette2.setBrush(QPalette::Inactive, QPalette::HighlightedText, brush);
+        palette2.setBrush(QPalette::Inactive, QPalette::AlternateBase, brush);
         palette2.setBrush(QPalette::Inactive, QPalette::ToolTipBase, brush7);
         palette2.setBrush(QPalette::Inactive, QPalette::ToolTipText, brush6);
-        palette2.setBrush(QPalette::Disabled, QPalette::WindowText, brush11);
-        palette2.setBrush(QPalette::Disabled, QPalette::Button, brush8);
-        palette2.setBrush(QPalette::Disabled, QPalette::Light, brush9);
-        palette2.setBrush(QPalette::Disabled, QPalette::Midlight, brush10);
-        palette2.setBrush(QPalette::Disabled, QPalette::Dark, brush11);
-        palette2.setBrush(QPalette::Disabled, QPalette::Mid, brush12);
-        palette2.setBrush(QPalette::Disabled, QPalette::Text, brush11);
+        palette2.setBrush(QPalette::Disabled, QPalette::WindowText, brush6);
+        palette2.setBrush(QPalette::Disabled, QPalette::Button, brush);
+        palette2.setBrush(QPalette::Disabled, QPalette::Light, brush8);
+        palette2.setBrush(QPalette::Disabled, QPalette::Midlight, brush9);
+        palette2.setBrush(QPalette::Disabled, QPalette::Dark, brush10);
+        palette2.setBrush(QPalette::Disabled, QPalette::Mid, brush11);
+        palette2.setBrush(QPalette::Disabled, QPalette::Text, brush6);
         palette2.setBrush(QPalette::Disabled, QPalette::BrightText, brush);
-        palette2.setBrush(QPalette::Disabled, QPalette::ButtonText, brush11);
-        palette2.setBrush(QPalette::Disabled, QPalette::Base, brush8);
-        palette2.setBrush(QPalette::Disabled, QPalette::Window, brush8);
+        palette2.setBrush(QPalette::Disabled, QPalette::ButtonText, brush6);
+        palette2.setBrush(QPalette::Disabled, QPalette::Base, brush);
+        palette2.setBrush(QPalette::Disabled, QPalette::Window, brush);
         palette2.setBrush(QPalette::Disabled, QPalette::Shadow, brush6);
-        palette2.setBrush(QPalette::Disabled, QPalette::AlternateBase, brush8);
+        palette2.setBrush(QPalette::Disabled, QPalette::Highlight, brush6);
+        palette2.setBrush(QPalette::Disabled, QPalette::HighlightedText, brush);
+        palette2.setBrush(QPalette::Disabled, QPalette::AlternateBase, brush);
         palette2.setBrush(QPalette::Disabled, QPalette::ToolTipBase, brush7);
         palette2.setBrush(QPalette::Disabled, QPalette::ToolTipText, brush6);
         pushButton_CreateAccount->setPalette(palette2);
         pushButton_CreateAccount->setFont(font1);
         pushButton_CreateAccount->setAutoFillBackground(false);
-        label__Username = new QLabel(centralWidget);
-        label__Username->setObjectName(QStringLiteral("label__Username"));
-        label__Username->setGeometry(QRect(151, 221, 95, 23));
-        label__Username->setFont(font1);
+        pushButton_CreateAccount->setStyleSheet(QLatin1String("QPushButton{\n"
+"	color: black;;\n"
+"	background-color: white;\n"
+"	alternate-background-color: white;\n"
+"	font: 12pt \"Arial\";\n"
+"	selection-color: white;\n"
+"	selection-background-color: black;\n"
+"	border: 1px solid black;\n"
+"}\n"
+"QPushButton:hover{\n"
+"	border: 2px solid black;\n"
+"}"));
+        label_Username = new QLabel(centralWidget);
+        label_Username->setObjectName(QStringLiteral("label_Username"));
+        label_Username->setGeometry(QRect(150, 220, 100, 25));
+        QFont font3;
+        font3.setPointSize(12);
+        label_Username->setFont(font3);
+        label_Username->setStyleSheet(QLatin1String("QLabel{\n"
+"	color: white;\n"
+"}"));
         label_Password = new QLabel(centralWidget);
         label_Password->setObjectName(QStringLiteral("label_Password"));
-        label_Password->setGeometry(QRect(151, 290, 94, 23));
-        label_Password->setFont(font1);
+        label_Password->setGeometry(QRect(150, 290, 100, 25));
+        label_Password->setFont(font3);
+        label_Password->setStyleSheet(QLatin1String("QLabel{\n"
+"	color: white;\n"
+"}"));
         label_LoginLogo = new QLabel(centralWidget);
         label_LoginLogo->setObjectName(QStringLiteral("label_LoginLogo"));
         label_LoginLogo->setGeometry(QRect(235, 100, 100, 100));
@@ -258,23 +304,49 @@ public:
         lineEdit_Password = new QLineEdit(centralWidget);
         lineEdit_Password->setObjectName(QStringLiteral("lineEdit_Password"));
         lineEdit_Password->setGeometry(QRect(150, 320, 270, 32));
-        lineEdit_Password->setFont(font1);
-        lineEdit_Password->setStyleSheet(QLatin1String("QLineEdit {\n"
-"	color: black;\n"
-"}"));
+        QFont font4;
+        font4.setFamily(QStringLiteral("Arial"));
+        font4.setPointSize(12);
+        lineEdit_Password->setFont(font4);
+        lineEdit_Password->setAcceptDrops(false);
+        lineEdit_Password->setStyleSheet(QLatin1String("QLineEdit{\n"
+"	color: white;\n"
+"	background-color: black;\n"
+"	alternate-background-color: black;\n"
+"	font: 12pt \"Arial\";\n"
+"	selection-color: black;\n"
+"	selection-background-color: white;\n"
+"	border: 1px solid white;\n"
+"}\n"
+"QLineEdit:hover{\n"
+"	border: 2px solid white;\n"
+"}\n"
+""));
+        lineEdit_Password->setMaxLength(24);
+        lineEdit_Password->setFrame(false);
         lineEdit_Password->setEchoMode(QLineEdit::Password);
         lineEdit_Username = new QLineEdit(centralWidget);
         lineEdit_Username->setObjectName(QStringLiteral("lineEdit_Username"));
         lineEdit_Username->setGeometry(QRect(150, 250, 270, 32));
-        QFont font3;
-        font3.setFamily(QStringLiteral("Arial"));
-        font3.setPointSize(12);
-        lineEdit_Username->setFont(font3);
-        lineEdit_Username->setStyleSheet(QLatin1String("QLineEdit {\n"
-"	color: black;\n"
-"}"));
+        lineEdit_Username->setFont(font4);
+        lineEdit_Username->setAcceptDrops(false);
+        lineEdit_Username->setStyleSheet(QLatin1String("QLineEdit{\n"
+"	color: white;\n"
+"	background-color: black;\n"
+"	alternate-background-color: black;\n"
+"	font: 12pt \"Arial\";\n"
+"	selection-color: black;\n"
+"	selection-background-color: white;\n"
+"	border: 1px solid white;\n"
+"}\n"
+"QLineEdit:hover{\n"
+"	border: 2px solid white;\n"
+"}\n"
+""));
+        lineEdit_Username->setMaxLength(24);
+        lineEdit_Username->setFrame(false);
         cove_login->setCentralWidget(centralWidget);
-        label__Username->raise();
+        label_Username->raise();
         label_Password->raise();
         label_Cove->raise();
         pushButton_CreateAccount->raise();
@@ -300,7 +372,7 @@ public:
         pushButton_LogIn->setText(QApplication::translate("cove_login", "Login", 0));
         label_Cove->setText(QApplication::translate("cove_login", "Cove", 0));
         pushButton_CreateAccount->setText(QApplication::translate("cove_login", "Create Account", 0));
-        label__Username->setText(QApplication::translate("cove_login", "Username:", 0));
+        label_Username->setText(QApplication::translate("cove_login", "Username:", 0));
         label_Password->setText(QApplication::translate("cove_login", "Password:", 0));
         label_LoginLogo->setText(QString());
     } // retranslateUi

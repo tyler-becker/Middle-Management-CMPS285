@@ -4,10 +4,12 @@
 #include <QWidget>
 
 class cove_account;
-class cove_chat;
+class cove_generalchat;
+class cove_securechat;
+class cove_privatechat;
 class cove_login;
 
-namespace Ui {
+namespace Ui{
   class cove_menu;
 }
 
@@ -21,11 +23,8 @@ public:
 
 private slots:
     void on_pushButton_Back_clicked();
-
     void on_pushButton_GeneralChat_clicked();
-
     void on_pushButton_SecureChat_clicked();
-
     void on_pushButton_PrivateChat_clicked();
 
 private:
@@ -33,7 +32,10 @@ private:
 
     //Pointers for Menu Window Buttons.
     cove_login *newCoveLoginWindow;
-    cove_chat *newCoveChatWindow;
+    cove_generalchat *newGeneralChatWindow;
+    cove_securechat *newSecureChatWindow;
+    cove_privatechat *newPrivateChatWindow;
+
 };
 
 #endif // COVE_MENU_H

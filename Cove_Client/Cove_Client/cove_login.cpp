@@ -5,15 +5,22 @@
 #include "cove_login.h"
 #include "ui_cove_login.h"
 
+#include "QString"
+#include "QEvent"
+#include "QKeyEvent"
 
 cove_login::cove_login(QWidget *parent) : QMainWindow(parent), ui(new Ui::cove_login)
 {
     ui->setupUi(this);
     this->setWindowFlags(this->windowFlags() & ~Qt::WindowMaximizeButtonHint);
+    this->statusBar()->setSizeGripEnabled(false);
+    ui->lineEdit_Username->installEventFilter(this);
+    ui->lineEdit_Password->installEventFilter(this);
 
     //Icon for Cove Login Window, commented out because PATH is not absolute.
     QPixmap pix("E:/School/General CMPS/Qt Projects/Cove_Client/SmallDino.PNG");
     ui->label_LoginLogo->setPixmap(pix);
+
 }
 
 cove_login::~cove_login()
@@ -21,38 +28,95 @@ cove_login::~cove_login()
     delete ui;
 }
 
-//signal slot method (testing)
-//cove_login::cove_login()
-//{
-//  // ...
-//   connect(logInButton, SIGNAL(click()), this, SLOT(on_logInButton_clicked());
-//  // ...
-//}
+bool cove_login::eventFilter(QObject *object, QEvent *event)
+{
+    if((object == ui->lineEdit_Username || object == ui->lineEdit_Password) && event->type() == QEvent::KeyPress){
+        QKeyEvent *keyEvent = static_cast<QKeyEvent *>(event);
 
-//displays menu window
+        switch(keyEvent->key()){
+            case Qt::Key_Enter:
+                login();
+                return true;
+            case Qt::Key_Return:
+                login();
+                return true;
+        }
+       return false;
+    }
+    else{
+        return QObject::eventFilter(object, event);
+    }
+}
+
 void cove_login::on_pushButton_LogIn_clicked()
 {
-    //modal approach
-    //Cove_Menu cove_menu;
-    //cove_menu.setModal(true);
-    //cove_menu.exec();
+    login();
+}
 
-    //modeless approach
-    newCoveMenuWindow = new cove_menu(this);
-    newCoveMenuWindow->show();
- }
-
-//signal slot method (testing)
-//cove_login::cove_login()
-//{
-//   // ...
-//   connect(createAccountButton, SIGNAL(click()), this, SLOT(on_createAccountButton_clicked());
-//   // ...
-//}
-
-//displays account window
 void cove_login::on_pushButton_CreateAccount_clicked()
 {
     newCoveAccountWindow = new cove_account(this);
     newCoveAccountWindow->show();
+    clearLogin();
+}
+
+void cove_login::login()
+{
+    if(validUsername() && validPassword()){
+        newCoveMenuWindow = new cove_menu(this);
+        newCoveMenuWindow->show();
+    }
+    else{
+        ui->lineEdit_Username->setFocus();
+        return;
+    }
+    clearLogin();
+}
+
+void cove_login::clearLogin()
+{
+    ui->lineEdit_Username->clear();
+    ui->lineEdit_Password->clear();
+}
+
+bool cove_login::validUsername()
+{
+    if(ui->lineEdit_Username->text().isEmpty()){
+      //  ui->lineEdit_Username->setStyleSheet(errorLEStyleSheet());
+        return false;
+    }
+    else if(ui->lineEdit_Username->text() != "Username"){
+      //  ui->lineEdit_Username->setStyleSheet(errorLEStyleSheet());
+        return false;
+    }
+    else{
+      //  ui->lineEdit_Username->setStyleSheet(standardLEStyleSheet());
+        return true;
+    }
+}
+
+bool cove_login::validPassword()
+{
+    if(ui->lineEdit_Password->text().isEmpty()){
+      //  ui->lineEdit_Password->setStyleSheet(errorLEStyleSheet());
+        return false;
+    }
+    else if(ui->lineEdit_Password->text() != "password"){
+      //  ui->lineEdit_Username->setStyleSheet(errorLEStyleSheet());
+        return false;
+    }
+    else{
+      //  ui->lineEdit_Username->setStyleSheet(standardLEStyleSheet());
+        return true;
+    }
+}
+
+QString cove_login::standardLEStyleSheet()
+{
+    return "QLineEdit{color: white; background-color: black; alternate-background-color: black; selection-color: black; selection-background-color: white; border: 1px solid white;} QLineEdit:hover{border: 2px solid white;}";
+}
+
+QString cove_login::errorLEStyleSheet()
+{
+    return "QLineEdit{color: white; background-color: black; alternate-background-color: black; selection-color: black; selection-background-color: white; border: 1px solid red;} QLineEdit:hover{border: 2px solid red;}";
 }

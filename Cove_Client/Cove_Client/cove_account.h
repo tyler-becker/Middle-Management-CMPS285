@@ -3,11 +3,10 @@
 
 #include <QWidget>
 
-class cove_chat;
 class cove_login;
 class cove_menu;
 
-namespace Ui {
+namespace Ui{
   class cove_account;
 }
 

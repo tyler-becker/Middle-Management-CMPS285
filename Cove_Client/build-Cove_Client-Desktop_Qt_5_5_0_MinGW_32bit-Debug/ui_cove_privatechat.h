@@ -1,13 +1,13 @@
 /********************************************************************************
-** Form generated from reading UI file 'cove_chat.ui'
+** Form generated from reading UI file 'cove_privatechat.ui'
 **
-** Created by: Qt User Interface Compiler version 5.5.0
+** Created by: Qt User Interface Compiler version 5.5.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
 
-#ifndef UI_COVE_CHAT_H
-#define UI_COVE_CHAT_H
+#ifndef UI_COVE_PRIVATECHAT_H
+#define UI_COVE_PRIVATECHAT_H
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QAction>
@@ -22,7 +22,7 @@
 
 QT_BEGIN_NAMESPACE
 
-class Ui_cove_chat
+class Ui_cove_privatechat
 {
 public:
     QPushButton *pushButton_ChatOptions;
@@ -34,11 +34,11 @@ public:
     QTextBrowser *textBrowser_ChatDisplay;
     QTextEdit *textEdit_ChatTypeField;
 
-    void setupUi(QDialog *cove_chat)
+    void setupUi(QDialog *cove_privatechat)
     {
-        if (cove_chat->objectName().isEmpty())
-            cove_chat->setObjectName(QStringLiteral("cove_chat"));
-        cove_chat->resize(770, 750);
+        if (cove_privatechat->objectName().isEmpty())
+            cove_privatechat->setObjectName(QStringLiteral("cove_privatechat"));
+        cove_privatechat->resize(770, 750);
         QPalette palette;
         QBrush brush(QColor(255, 255, 255, 255));
         brush.setStyle(Qt::SolidPattern);
@@ -101,9 +101,13 @@ public:
         palette.setBrush(QPalette::Disabled, QPalette::AlternateBase, brush1);
         palette.setBrush(QPalette::Disabled, QPalette::ToolTipBase, brush7);
         palette.setBrush(QPalette::Disabled, QPalette::ToolTipText, brush6);
-        cove_chat->setPalette(palette);
-        cove_chat->setContextMenuPolicy(Qt::DefaultContextMenu);
-        pushButton_ChatOptions = new QPushButton(cove_chat);
+        cove_privatechat->setPalette(palette);
+        QFont font;
+        font.setFamily(QStringLiteral("Arial"));
+        font.setPointSize(12);
+        cove_privatechat->setFont(font);
+        cove_privatechat->setContextMenuPolicy(Qt::DefaultContextMenu);
+        pushButton_ChatOptions = new QPushButton(cove_privatechat);
         pushButton_ChatOptions->setObjectName(QStringLiteral("pushButton_ChatOptions"));
         pushButton_ChatOptions->setGeometry(QRect(290, 600, 100, 30));
         QPalette palette1;
@@ -135,13 +139,13 @@ public:
         palette1.setBrush(QPalette::Disabled, QPalette::HighlightedText, brush);
         palette1.setBrush(QPalette::Disabled, QPalette::AlternateBase, brush);
         pushButton_ChatOptions->setPalette(palette1);
-        QFont font;
-        font.setFamily(QStringLiteral("Arial"));
-        font.setPointSize(10);
-        font.setBold(false);
-        font.setItalic(false);
-        font.setWeight(50);
-        pushButton_ChatOptions->setFont(font);
+        QFont font1;
+        font1.setFamily(QStringLiteral("Arial"));
+        font1.setPointSize(10);
+        font1.setBold(false);
+        font1.setItalic(false);
+        font1.setWeight(50);
+        pushButton_ChatOptions->setFont(font1);
         pushButton_ChatOptions->setFocusPolicy(Qt::NoFocus);
         pushButton_ChatOptions->setStyleSheet(QLatin1String("QPushButton{\n"
 "	color: black;;\n"
@@ -156,13 +160,10 @@ public:
 "	border: 2px solid black;\n"
 "}"));
         pushButton_ChatOptions->setAutoDefault(false);
-        pushButton_Send = new QPushButton(cove_chat);
+        pushButton_Send = new QPushButton(cove_privatechat);
         pushButton_Send->setObjectName(QStringLiteral("pushButton_Send"));
         pushButton_Send->setGeometry(QRect(530, 640, 200, 70));
-        QFont font1;
-        font1.setFamily(QStringLiteral("Arial"));
-        font1.setPointSize(12);
-        pushButton_Send->setFont(font1);
+        pushButton_Send->setFont(font);
         pushButton_Send->setCursor(QCursor(Qt::ArrowCursor));
         pushButton_Send->setContextMenuPolicy(Qt::NoContextMenu);
         pushButton_Send->setStyleSheet(QLatin1String("QPushButton{\n"
@@ -178,7 +179,7 @@ public:
 "	border: 2px solid black;\n"
 "}"));
         pushButton_Send->setAutoDefault(false);
-        pushButton_TextOptions = new QPushButton(cove_chat);
+        pushButton_TextOptions = new QPushButton(cove_privatechat);
         pushButton_TextOptions->setObjectName(QStringLiteral("pushButton_TextOptions"));
         pushButton_TextOptions->setGeometry(QRect(180, 600, 100, 30));
         QPalette palette2;
@@ -210,7 +211,7 @@ public:
         palette2.setBrush(QPalette::Disabled, QPalette::HighlightedText, brush);
         palette2.setBrush(QPalette::Disabled, QPalette::AlternateBase, brush);
         pushButton_TextOptions->setPalette(palette2);
-        pushButton_TextOptions->setFont(font);
+        pushButton_TextOptions->setFont(font1);
         pushButton_TextOptions->setFocusPolicy(Qt::NoFocus);
         pushButton_TextOptions->setStyleSheet(QLatin1String("QPushButton{\n"
 "	color: black;;\n"
@@ -225,7 +226,7 @@ public:
 "	border: 2px solid black;\n"
 "}"));
         pushButton_TextOptions->setAutoDefault(false);
-        pushButton_Insert = new QPushButton(cove_chat);
+        pushButton_Insert = new QPushButton(cove_privatechat);
         pushButton_Insert->setObjectName(QStringLiteral("pushButton_Insert"));
         pushButton_Insert->setGeometry(QRect(70, 600, 100, 30));
         QPalette palette3;
@@ -257,7 +258,7 @@ public:
         palette3.setBrush(QPalette::Disabled, QPalette::HighlightedText, brush);
         palette3.setBrush(QPalette::Disabled, QPalette::AlternateBase, brush);
         pushButton_Insert->setPalette(palette3);
-        pushButton_Insert->setFont(font);
+        pushButton_Insert->setFont(font1);
         pushButton_Insert->setFocusPolicy(Qt::NoFocus);
         pushButton_Insert->setStyleSheet(QLatin1String("QPushButton{\n"
 "	color: black;;\n"
@@ -272,7 +273,7 @@ public:
 "	border: 2px solid black;\n"
 "}"));
         pushButton_Insert->setAutoDefault(false);
-        pushButton_dotdotdot = new QPushButton(cove_chat);
+        pushButton_dotdotdot = new QPushButton(cove_privatechat);
         pushButton_dotdotdot->setObjectName(QStringLiteral("pushButton_dotdotdot"));
         pushButton_dotdotdot->setGeometry(QRect(400, 600, 76, 30));
         QPalette palette4;
@@ -307,7 +308,7 @@ public:
         palette4.setBrush(QPalette::Disabled, QPalette::HighlightedText, brush);
         palette4.setBrush(QPalette::Disabled, QPalette::AlternateBase, brush);
         pushButton_dotdotdot->setPalette(palette4);
-        pushButton_dotdotdot->setFont(font);
+        pushButton_dotdotdot->setFont(font1);
         pushButton_dotdotdot->setFocusPolicy(Qt::NoFocus);
         pushButton_dotdotdot->setAutoFillBackground(false);
         pushButton_dotdotdot->setStyleSheet(QLatin1String("QPushButton{\n"
@@ -322,7 +323,7 @@ public:
 "QPushButton:hover{\n"
 "	border: 2px solid black;\n"
 "}"));
-        listWidget_UserDisplay = new QListWidget(cove_chat);
+        listWidget_UserDisplay = new QListWidget(cove_privatechat);
         QFont font2;
         font2.setFamily(QStringLiteral("Arial"));
         font2.setPointSize(12);
@@ -348,7 +349,7 @@ public:
 "\n"
 "	border: 1px solid white;\n"
 "}"));
-        textBrowser_ChatDisplay = new QTextBrowser(cove_chat);
+        textBrowser_ChatDisplay = new QTextBrowser(cove_privatechat);
         textBrowser_ChatDisplay->setObjectName(QStringLiteral("textBrowser_ChatDisplay"));
         textBrowser_ChatDisplay->setGeometry(QRect(40, 40, 470, 550));
         textBrowser_ChatDisplay->setFont(font3);
@@ -363,7 +364,7 @@ public:
 "	border: 1px solid white;\n"
 "}"));
         textBrowser_ChatDisplay->setOpenExternalLinks(true);
-        textEdit_ChatTypeField = new QTextEdit(cove_chat);
+        textEdit_ChatTypeField = new QTextEdit(cove_privatechat);
         textEdit_ChatTypeField->setObjectName(QStringLiteral("textEdit_ChatTypeField"));
         textEdit_ChatTypeField->setGeometry(QRect(40, 640, 470, 70));
         QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
@@ -384,30 +385,30 @@ public:
 "}"));
         textEdit_ChatTypeField->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
-        retranslateUi(cove_chat);
+        retranslateUi(cove_privatechat);
 
         pushButton_Send->setDefault(false);
 
 
-        QMetaObject::connectSlotsByName(cove_chat);
+        QMetaObject::connectSlotsByName(cove_privatechat);
     } // setupUi
 
-    void retranslateUi(QDialog *cove_chat)
+    void retranslateUi(QDialog *cove_privatechat)
     {
-        cove_chat->setWindowTitle(QApplication::translate("cove_chat", "Cove Client", 0));
-        pushButton_ChatOptions->setText(QApplication::translate("cove_chat", "chat options", 0));
-        pushButton_Send->setText(QApplication::translate("cove_chat", "Send", 0));
-        pushButton_TextOptions->setText(QApplication::translate("cove_chat", "text options", 0));
-        pushButton_Insert->setText(QApplication::translate("cove_chat", "Insert", 0));
-        pushButton_dotdotdot->setText(QApplication::translate("cove_chat", "...", 0));
+        cove_privatechat->setWindowTitle(QApplication::translate("cove_privatechat", "Cove Client", 0));
+        pushButton_ChatOptions->setText(QApplication::translate("cove_privatechat", "chat options", 0));
+        pushButton_Send->setText(QApplication::translate("cove_privatechat", "Send", 0));
+        pushButton_TextOptions->setText(QApplication::translate("cove_privatechat", "text options", 0));
+        pushButton_Insert->setText(QApplication::translate("cove_privatechat", "Insert", 0));
+        pushButton_dotdotdot->setText(QApplication::translate("cove_privatechat", "...", 0));
 
         const bool __sortingEnabled = listWidget_UserDisplay->isSortingEnabled();
         listWidget_UserDisplay->setSortingEnabled(false);
         QListWidgetItem *___qlistwidgetitem = listWidget_UserDisplay->item(0);
-        ___qlistwidgetitem->setText(QApplication::translate("cove_chat", "Current User List", 0));
+        ___qlistwidgetitem->setText(QApplication::translate("cove_privatechat", "Current User List", 0));
         listWidget_UserDisplay->setSortingEnabled(__sortingEnabled);
 
-        textBrowser_ChatDisplay->setHtml(QApplication::translate("cove_chat", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        textBrowser_ChatDisplay->setHtml(QApplication::translate("cove_privatechat", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'Arial'; font-size:12pt; font-weight:600; font-style:normal;\">\n"
@@ -417,9 +418,9 @@ public:
 };
 
 namespace Ui {
-    class cove_chat: public Ui_cove_chat {};
+    class cove_privatechat: public Ui_cove_privatechat {};
 } // namespace Ui
 
 QT_END_NAMESPACE
 
-#endif // UI_COVE_CHAT_H
+#endif // UI_COVE_PRIVATECHAT_H

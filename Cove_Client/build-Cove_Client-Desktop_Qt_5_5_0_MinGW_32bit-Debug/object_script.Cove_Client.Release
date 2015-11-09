@@ -3,10 +3,14 @@ INPUT(
 ./release\cove_login.o
 ./release\cove_menu.o
 ./release\cove_account.o
-./release\cove_chat.o
+./release\cove_generalchat.o
+./release\cove_securechat.o
+./release\cove_privatechat.o
 ./release\qrc_icon.o
 ./release\moc_cove_login.o
 ./release\moc_cove_menu.o
 ./release\moc_cove_account.o
-./release\moc_cove_chat.o
+./release\moc_cove_generalchat.o
+./release\moc_cove_securechat.o
+./release\moc_cove_privatechat.o
 );
