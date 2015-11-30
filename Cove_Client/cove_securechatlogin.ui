@@ -571,9 +571,9 @@ QLineEdit:focus
   <widget class="QLabel" name="label_invalidRoomPassword">
    <property name="geometry">
     <rect>
-     <x>177</x>
+     <x>170</x>
      <y>160</y>
-     <width>195</width>
+     <width>225</width>
      <height>20</height>
     </rect>
    </property>
@@ -658,7 +658,7 @@ QLineEdit:focus
 }</string>
    </property>
    <property name="text">
-    <string>Secure Chat Login</string>
+    <string>Secure Chat</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
@@ -667,9 +667,9 @@ QLineEdit:focus
   <widget class="QLabel" name="label_invalidRoomUsername">
    <property name="geometry">
     <rect>
-     <x>177</x>
+     <x>170</x>
      <y>130</y>
-     <width>195</width>
+     <width>225</width>
      <height>20</height>
     </rect>
    </property>

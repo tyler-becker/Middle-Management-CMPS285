@@ -25,11 +25,6 @@ bool cove_account::validNewUsername()
     QRegExp numbers("[0-9]");
     QRegExp letters("[a-zA-Z]");
     QRegExp others("\\W");
-
-    //********************
-    //QString Username = "";
-    //********************
-
     QString newUsername = ui->lineEdit_ChangeUsername->text();
 
     if(newUsername.length() < 3){
@@ -88,11 +83,6 @@ bool cove_account::validNewPassword()
     QRegExp numbers("[0-9]");
     QRegExp letters("[a-zA-Z]");
     QRegExp others("\\W");
-
-    //********************
-    //QString Username = "";
-    //********************
-
     QString newPassword = ui->lineEdit_ChangePassword->text();
 
     if(newPassword.length() < 3){

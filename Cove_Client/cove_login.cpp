@@ -1,3 +1,5 @@
+#include "cove_generalchat.h"
+#include "ui_cove_generalchat.h"
 #include "cove_menu.h"
 #include "ui_cove_menu.h"
 #include "cove_createaccount.h"
@@ -9,7 +11,6 @@
 #include "QString"
 #include "QEvent"
 #include "QKeyEvent"
-#include "QDebug"
 
 cove_login::cove_login(QWidget *parent) : QMainWindow(parent), ui(new Ui::cove_login)
 {
@@ -111,8 +112,6 @@ bool cove_login::validUsernameAndPassword()
     QString inputUsername = ui->lineEdit_Username->text();
     QString inputPassword = ui->lineEdit_Password->text();
 
-    //currUsername = this->ui->lineEdit_Username->text();
-
     dbConnectionOpen();
     QSqlQuery query;
     if(query.exec("select * from userdata where username = '"+inputUsername+"' and password = '"+inputPassword+"'")){
@@ -121,7 +120,9 @@ bool cove_login::validUsernameAndPassword()
             count++;
         }
         if(count == 1){
-            currUsername = ui->lineEdit_Username->text();
+            setUsername(ui->lineEdit_Username->text());
+            cove_generalchat covegeneralchat;
+            covegeneralchat.setCurrUsername(getUsername());
             return true;
         }
         else{
@@ -129,21 +130,16 @@ bool cove_login::validUsernameAndPassword()
         }
     }
     dbConnectionClose();
+    return 0;
 }
 
-const QString& cove_login::getUsername() const
+QString cove_login::getUsername() const
 {
-    return currUsername;
-    qDebug() << currUsername;
+    return Username;
 }
 
-QString cove_login::standardLEStyleSheet()
+void cove_login::setUsername(const QString &value)
 {
-    return "QLineEdit{color: white; background-color: black; alternate-background-color: black; selection-color: black; selection-background-color: white; border: 1px solid white;} QLineEdit:hover{border: 2px solid white;}";
-}
-
-QString cove_login::errorLEStyleSheet()
-{
-    return "QLineEdit{color: white; background-color: black; alternate-background-color: black; selection-color: black; selection-background-color: white; border: 1px solid red;} QLineEdit:hover{border: 2px solid red;}";
+    Username = value;
 }
 

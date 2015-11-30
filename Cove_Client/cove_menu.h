@@ -4,13 +4,14 @@
 #include <QWidget>
 
 class cove_createaccount;
+class cove_login;
 class cove_generalchat;
 class cove_privatechat;
 class cove_securechat;
 class cove_createchat;
 class cove_securechatlogin;
 class cove_account;
-class cove_login;
+
 
 namespace Ui{
   class cove_menu;
@@ -25,12 +26,11 @@ public:
     ~cove_menu();
 
 private slots:
-
     void on_pushButton_GeneralChat_clicked();
     void on_pushButton_PrivateChat_clicked();
     void on_pushButton_CreateChat_clicked();
     void on_pushButton_SecureChat_clicked();
-    void on_pushButton_Account_clicked();
+    //void on_pushButton_Account_clicked();
     void on_pushButton_LogOut_clicked();
 
 private:
@@ -43,7 +43,8 @@ private:
     cove_privatechat *newPrivateChatWindow;
     cove_createchat *newCreateChatWindow;
     cove_securechatlogin *newSecureChatLoginWindow;
-    cove_account *newAccountWindow;
+    //cove_account *newAccountWindow;
+
 };
 
 #endif // COVE_MENU_H

@@ -2,6 +2,7 @@
 #define COVE_SECURECHAT_H
 
 #include <QDialog>
+#include <QTcpSocket>
 #include "QtSql"
 
 class cove_createaccount;
@@ -42,14 +43,22 @@ public:
     explicit cove_securechat(QWidget *parent = 0);
     ~cove_securechat();
 
+    QString getCurrUsername() const;
+    void setCurrUsername(const QString &value);
+
 private slots:
-    bool showConnected();
+    void showConnected();
     void on_pushButton_Send_clicked();
+    void readyRead();
+    void connected();
     void displayInputMessage();
     bool eventFilter(QObject *object, QEvent *event);
+    void closeEvent(QCloseEvent *event);
 
 private:
     Ui::cove_securechat *ui;
+    QString currUsername;
+    QTcpSocket *socket;
 
     //Pointers for Secure Chat Window Buttons.
 };

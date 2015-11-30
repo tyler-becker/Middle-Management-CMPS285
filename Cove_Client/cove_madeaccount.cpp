@@ -17,5 +17,4 @@ void cove_madeaccount::on_pushButton_Continue_clicked()
 {
     newCoveLoginWindow = new cove_login(this);
     newCoveLoginWindow->show();
-    //this->hide();
 }

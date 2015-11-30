@@ -1,5 +1,7 @@
 #include "cove_menu.h"
 #include "ui_cove_menu.h"
+#include "cove_generalchat.h"
+#include "ui_cove_generalchat.h"
 #include "cove_createchat.h"
 #include "ui_cove_createchat.h"
 
@@ -59,11 +61,6 @@ bool cove_createchat::validRoomName()
     QRegExp numbers("[0-9]");
     QRegExp letters("[a-zA-Z]");
     QRegExp others("\\W");
-
-    //********************
-    //QString RoomName = "";
-    //********************
-
     QString RoomName = ui->lineEdit_RoomName->text();
 
     if(RoomName.length() < 3){
@@ -88,7 +85,6 @@ bool cove_createchat::validRoomPassword()
     QRegExp numbers("[0-9]");
     QRegExp letters("[a-zA-Z]");
     QRegExp others("\\W");
-
     QString RoomPassword = ui->lineEdit_RoomPassword->text();
 
     if(RoomPassword.length() < 3){
@@ -131,8 +127,6 @@ void cove_createchat::on_pushButton_CreateChat_clicked()
             ui->label_RoomAleardyExists->hide();
             createChat();
             QMessageBox::information(this, tr("Cove Client"), tr("Room successfully created!"));
-            //newCoveMadeRoomWindow = new cove_maderoom(this);
-            //newCoveMadeRoomWindow->show();
             newCoveMenuWindow = new cove_menu(this);
             newCoveMenuWindow->show();
             this->hide();

@@ -4,7 +4,8 @@
 #
 #-------------------------------------------------
 
-QT       += core gui sql
+QT += core gui sql
+QT += network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -23,7 +24,7 @@ SOURCES += main.cpp\
     cove_account.cpp \
     cove_securechatlogin.cpp
 
-HEADERS  += \
+HEADERS += \
     cove_login.h \
     cove_menu.h \
     cove_generalchat.h \
@@ -35,7 +36,7 @@ HEADERS  += \
     cove_account.h \
     cove_securechatlogin.h
 
-FORMS    += \
+FORMS += \
     cove_login.ui \
     cove_menu.ui \
     cove_generalchat.ui \

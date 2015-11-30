@@ -1,8 +1,8 @@
-#pragma once
 #ifndef COVE_GENERALCHAT_H
 #define COVE_GENERALCHAT_H
 
 #include <QDialog>
+#include <QTcpSocket>
 #include "QtSql"
 
 class cove_createaccount;
@@ -43,21 +43,22 @@ public:
     explicit cove_generalchat(QWidget *parent = 0);
     ~cove_generalchat();
 
+    QString getCurrUsername() const;
+    void setCurrUsername(const QString &value);
+
 private slots:
     void showConnected();
     void on_pushButton_Send_clicked();
+    void readyRead();
+    void connected();
     void displayInputMessage();
-    QString UsernameDisplay();
     bool eventFilter(QObject *object, QEvent *event);
+    void closeEvent(QCloseEvent *event);
 
 private:
-    Ui::cove_generalchat *ui;
-
-    QScopedPointer<cove_login> m_dialog;
-
-    //std::unique_ptr<cove_login> m_dialog;
-
-    QString Username;
+    Ui::cove_generalchat *ui; 
+    QString currUsername;
+    QTcpSocket *socket;
 
     //Pointers for General Chat Window Buttons.
 };

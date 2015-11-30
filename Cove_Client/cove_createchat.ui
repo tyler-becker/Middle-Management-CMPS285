@@ -646,7 +646,7 @@ QLineEdit:focus
     <rect>
      <x>185</x>
      <y>150</y>
-     <width>180</width>
+     <width>190</width>
      <height>20</height>
     </rect>
    </property>

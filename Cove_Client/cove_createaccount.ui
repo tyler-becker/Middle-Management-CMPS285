@@ -1663,9 +1663,9 @@ QLineEdit:focus
   <widget class="QLabel" name="label_UsernameAleardyExists">
    <property name="geometry">
     <rect>
-     <x>175</x>
+     <x>165</x>
      <y>150</y>
-     <width>200</width>
+     <width>225</width>
      <height>20</height>
     </rect>
    </property>

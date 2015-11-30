@@ -1,8 +1,8 @@
-#pragma once
 #ifndef COVE_PRIVATECHAT_H
 #define COVE_PRIVATECHAT_H
 
 #include <QDialog>
+#include <QTcpSocket>
 #include "QtSql"
 
 class cove_createaccount;
@@ -43,14 +43,22 @@ public:
     explicit cove_privatechat(QWidget *parent = 0);
     ~cove_privatechat();
 
+    QString getCurrUsername() const;
+    void setCurrUsername(const QString &value);
+
 private slots:
-    bool showConnected();
+    void showConnected();
     void on_pushButton_Send_clicked();
+    void readyRead();
+    void connected();
     void displayInputMessage();
     bool eventFilter(QObject *object, QEvent *event);
+    void closeEvent(QCloseEvent *event);
 
 private:
     Ui::cove_privatechat *ui;
+    QString currUsername;
+    QTcpSocket *socket;
 
     //Pointers for Private Chat Window Buttons.
 };

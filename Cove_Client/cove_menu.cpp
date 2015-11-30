@@ -54,11 +54,11 @@ void cove_menu::on_pushButton_SecureChat_clicked()
     newSecureChatLoginWindow->show();
 }
 
-void cove_menu::on_pushButton_Account_clicked()
-{
-    newAccountWindow = new cove_account(this);
-    newAccountWindow->show();
-}
+//void cove_menu::on_pushButton_Account_clicked()
+//{
+//   newAccountWindow = new cove_account(this);
+//    newAccountWindow->show();
+//}
 
 void cove_menu::on_pushButton_LogOut_clicked()
 {

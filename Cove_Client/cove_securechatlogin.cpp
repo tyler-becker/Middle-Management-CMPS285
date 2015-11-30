@@ -8,7 +8,6 @@
 #include "QString"
 #include "QEvent"
 #include "QKeyEvent"
-#include "QDebug"
 
 cove_securechatlogin::cove_securechatlogin(QWidget *parent) : QDialog(parent), ui(new Ui::cove_securechatlogin)
 {

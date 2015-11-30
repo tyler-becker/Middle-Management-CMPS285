@@ -14,6 +14,8 @@
 cove_createaccount::cove_createaccount(QWidget *parent) : QWidget(parent), ui(new Ui::cove_createaccount)
 {
     ui->setupUi(this);
+
+
     ui->pushButton_CreateAccount->setEnabled(false);
     ui->label_UsernameAleardyExists->hide();
     ui->lineEdit_Username->setFocus();
@@ -57,11 +59,6 @@ bool cove_createaccount::validUsername()
     QRegExp numbers("[0-9]");
     QRegExp letters("[a-zA-Z]");
     QRegExp others("\\W");
-
-    //********************
-    //QString Username = "";
-    //********************
-
     QString Username = ui->lineEdit_Username->text();
 
     if(Username.length() < 3){
@@ -86,7 +83,6 @@ bool cove_createaccount::validPassword()
     QRegExp numbers("[0-9]");
     QRegExp letters("[a-zA-Z]");
     QRegExp others("\\W");
-
     QString Password = ui->lineEdit_Password->text();
     QString conPassword = ui->lineEdit_ConfirmPassword->text();
 
@@ -133,8 +129,6 @@ void cove_createaccount::on_pushButton_CreateAccount_clicked()
             ui->label_UsernameAleardyExists->hide();
             createAccount();
             QMessageBox::information(this, tr("Cove Client"), tr("Account successfully created!"));
-            //newCoveMadeAccountWindow = new cove_madeaccount(this);
-            //newCoveMadeAccountWindow->show();
             this->hide();
         }
 
@@ -144,6 +138,5 @@ void cove_createaccount::on_pushButton_CreateAccount_clicked()
 
 void cove_createaccount::on_pushButton_Cancel_clicked()
 {
-    newCoveLoginWindow = new cove_login(this);
     this->hide();
 }

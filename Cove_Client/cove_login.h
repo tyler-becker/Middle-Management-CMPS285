@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "QtSql"
 
+class cove_generalchat;
 class cove_createaccount;
 class cove_menu;
 
@@ -41,7 +42,8 @@ public:
     explicit cove_login(QWidget *parent = 0);
     ~cove_login();
 
-    const QString& getUsername() const;
+    QString getUsername() const;
+    void setUsername(const QString &value);
 
 private slots:
     void on_pushButton_LogIn_clicked();
@@ -51,13 +53,10 @@ private slots:
     void enableLoginButton();
     bool eventFilter(QObject *object, QEvent *event);
     bool validUsernameAndPassword();
-    QString standardLEStyleSheet();
-    QString errorLEStyleSheet();
 
 private:
     Ui::cove_login *ui;
-
-    QString currUsername;
+    QString Username;
 
     //Pointers for Login Window Buttons.
     cove_menu *newCoveMenuWindow;

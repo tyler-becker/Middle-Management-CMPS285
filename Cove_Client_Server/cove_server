@@ -1,0 +1,11 @@
+#ifndef COVECLIENTSERVER_H
+#define COVECLIENTSERVER_H
+
+
+class coveclientserver
+{
+public:
+    coveclientserver();
+};
+
+#endif // COVECLIENTSERVER_H
