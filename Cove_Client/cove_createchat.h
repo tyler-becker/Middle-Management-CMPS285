@@ -40,6 +40,9 @@ public:
     explicit cove_createchat(QWidget *parent = 0);
     ~cove_createchat();
 
+    QString getCurrUsername() const;
+    void setCurrUsername(const QString &value);
+
 private slots:
     void createChat();
     void enableCreateChatButton();
@@ -48,9 +51,12 @@ private slots:
     bool validRoomPassword();
     void on_pushButton_CreateChat_clicked();
     void on_pushButton_Back_clicked();
+    void closeEvent(QCloseEvent *event);
 
 private:
     Ui::cove_createchat *ui;
+
+    QString currUsername;
 
     //Pointers for Create Chat Window Buttons.
     cove_menu *newCoveMenuWindow;

@@ -441,9 +441,9 @@
    <property name="geometry">
     <rect>
      <x>50</x>
-     <y>400</y>
-     <width>180</width>
-     <height>150</height>
+     <y>430</y>
+     <width>170</width>
+     <height>120</height>
     </rect>
    </property>
    <property name="palette">
@@ -976,10 +976,10 @@ QPushButton:hover
   <widget class="QPushButton" name="pushButton_PrivateChat">
    <property name="geometry">
     <rect>
-     <x>320</x>
-     <y>170</y>
-     <width>180</width>
-     <height>150</height>
+     <x>330</x>
+     <y>150</y>
+     <width>170</width>
+     <height>120</height>
     </rect>
    </property>
    <property name="palette">
@@ -1482,10 +1482,10 @@ QPushButton:hover
   <widget class="QPushButton" name="pushButton_SecureChat">
    <property name="geometry">
     <rect>
-     <x>320</x>
-     <y>400</y>
-     <width>180</width>
-     <height>150</height>
+     <x>330</x>
+     <y>430</y>
+     <width>170</width>
+     <height>120</height>
     </rect>
    </property>
    <property name="palette">
@@ -1990,9 +1990,9 @@ QPushButton:hover
    <property name="geometry">
     <rect>
      <x>50</x>
-     <y>170</y>
-     <width>180</width>
-     <height>150</height>
+     <y>150</y>
+     <width>170</width>
+     <height>120</height>
     </rect>
    </property>
    <property name="palette">
@@ -2828,6 +2828,35 @@ QPushButton:hover
     <enum>Qt::Horizontal</enum>
    </property>
   </widget>
+  <widget class="QPushButton" name="pushButton_Account">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>290</y>
+     <width>170</width>
+     <height>120</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton
+{
+	color: #55ff7c;
+	background-color: grey;
+	alternate-background-color: grey;
+	font: bold 12pt &quot;Arial&quot;;
+	selection-color: grey;
+	selection-background-color: black;
+	border: 1px solid #55ff7c
+}
+QPushButton:hover
+{
+	border: 2px solid #55ff7c;
+}</string>
+   </property>
+   <property name="text">
+    <string>Account</string>
+   </property>
+  </widget>
   <zorder>pushButton_CreateChat</zorder>
   <zorder>pushButton_PrivateChat</zorder>
   <zorder>pushButton_SecureChat</zorder>
@@ -2836,6 +2865,7 @@ QPushButton:hover
   <zorder>line</zorder>
   <zorder>label_Menu</zorder>
   <zorder>pushButton_LogOut</zorder>
+  <zorder>pushButton_Account</zorder>
  </widget>
  <tabstops>
   <tabstop>pushButton_GeneralChat</tabstop>

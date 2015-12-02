@@ -1,14 +1,16 @@
-#include "cove_server.h"
+#include "cove_privateserver.h"
+
+//#include "cove_server.h"
 
 #include <QTcpSocket>
 #include <QRegExp>
 
-cove_server::cove_server(QObject *parent) : QTcpServer(parent)
+cove_privateserver::cove_privateserver(QObject *parent) : QTcpServer(parent)
 {
 
 }
 
-void cove_server::incomingConnection(int socketfd)
+void cove_privateserver::incomingConnection(int socketfd)
 {
     QTcpSocket *client = new QTcpSocket(this);
     client->setSocketDescriptor(socketfd);
@@ -20,7 +22,7 @@ void cove_server::incomingConnection(int socketfd)
     connect(client, SIGNAL(disconnected()), this, SLOT(disconnected()));
 }
 
-void cove_server::readyRead()
+void cove_privateserver::readyRead()
 {
     QTcpSocket *client = (QTcpSocket*)sender();
     while(client->canReadLine())
@@ -57,7 +59,7 @@ void cove_server::readyRead()
     }
 }
 
-void cove_server::disconnected()
+void cove_privateserver::disconnected()
 {
     QTcpSocket *client = (QTcpSocket*)sender();
     qDebug() << "Client disconnected:" << client->peerAddress().toString();
@@ -72,7 +74,7 @@ void cove_server::disconnected()
         client->write(QString("Server:" + user + " has left.\n").toUtf8());
 }
 
-void cove_server::sendUserList()
+void cove_privateserver::sendUserList()
 {
     QStringList userList;
     foreach(QString user, users.values())
@@ -81,3 +83,4 @@ void cove_server::sendUserList()
     foreach(QTcpSocket *client, clients)
         client->write(QString("/users:" + userList.join(",") + "\n").toUtf8());
 }
+

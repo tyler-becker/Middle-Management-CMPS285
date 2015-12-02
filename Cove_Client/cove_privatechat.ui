@@ -487,51 +487,6 @@ QPushButton:hover
     <bool>false</bool>
    </property>
   </widget>
-  <widget class="QListWidget" name="listWidget_UserDisplay">
-   <property name="geometry">
-    <rect>
-     <x>530</x>
-     <y>30</y>
-     <width>200</width>
-     <height>601</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Arial</family>
-     <pointsize>12</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QListWidget{
-	color: white;
-	background-color: black;
-	alternate-background-color: black;
-
-	selection-color: black;
-	selection-background-color: white;
-
-	border: 1px solid darkgrey;
-}</string>
-   </property>
-   <item>
-    <property name="text">
-     <string>Current User List</string>
-    </property>
-    <property name="font">
-     <font>
-      <family>Arial</family>
-      <pointsize>12</pointsize>
-      <underline>false</underline>
-     </font>
-    </property>
-    <property name="textAlignment">
-     <set>AlignCenter</set>
-    </property>
-   </item>
-  </widget>
   <widget class="QTextBrowser" name="textBrowser_ChatDisplay">
    <property name="geometry">
     <rect>
@@ -617,12 +572,56 @@ QTextEdit:focus
     <string>Type here...</string>
    </property>
   </widget>
+  <widget class="QListWidget" name="listWidget_UserDisplay">
+   <property name="geometry">
+    <rect>
+     <x>530</x>
+     <y>30</y>
+     <width>200</width>
+     <height>601</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>12</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QListWidget{
+	color: white;
+	background-color: black;
+	alternate-background-color: black;
+
+	selection-color: black;
+	selection-background-color: white;
+
+	border: 1px solid darkgrey;
+}</string>
+   </property>
+   <item>
+    <property name="text">
+     <string>Current User List</string>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>12</pointsize>
+      <underline>false</underline>
+     </font>
+    </property>
+    <property name="textAlignment">
+     <set>AlignCenter</set>
+    </property>
+   </item>
+  </widget>
  </widget>
  <tabstops>
   <tabstop>textEdit_ChatTypeField</tabstop>
   <tabstop>pushButton_Send</tabstop>
   <tabstop>textBrowser_ChatDisplay</tabstop>
-  <tabstop>listWidget_UserDisplay</tabstop>
  </tabstops>
  <resources/>
  <connections/>

@@ -660,7 +660,6 @@ QLineEdit:focus
     <string notr="true">QLabel{
 	color: red;
 	background-color: none;
-	border: 1px solid red;
 }</string>
    </property>
    <property name="text">

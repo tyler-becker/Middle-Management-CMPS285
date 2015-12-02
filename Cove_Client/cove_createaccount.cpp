@@ -11,10 +11,12 @@
 #include "QRegExp"
 #include "QMessageBox"
 
-cove_createaccount::cove_createaccount(QWidget *parent) : QWidget(parent), ui(new Ui::cove_createaccount)
+cove_createaccount::cove_createaccount(QWidget *parent) : QDialog(parent), ui(new Ui::cove_createaccount)
 {
     ui->setupUi(this);
-
+    this->setWindowFlags(this->windowFlags() & ~Qt::WindowContextHelpButtonHint);
+    this->setWindowFlags(this->windowFlags() & Qt::WindowMinimizeButtonHint);
+    this->setWindowFlags(this->windowFlags() & ~Qt::WindowMaximizeButtonHint);
 
     ui->pushButton_CreateAccount->setEnabled(false);
     ui->label_UsernameAleardyExists->hide();
@@ -27,6 +29,14 @@ cove_createaccount::cove_createaccount(QWidget *parent) : QWidget(parent), ui(ne
 cove_createaccount::~cove_createaccount()
 {
     delete ui;
+}
+
+void cove_createaccount::closeEvent(QCloseEvent *event)
+{
+    cove_login covelogin;
+    this->hide();
+    covelogin.exec();
+    QWidget::closeEvent(event);
 }
 
 void cove_createaccount::createAccount()
@@ -128,8 +138,12 @@ void cove_createaccount::on_pushButton_CreateAccount_clicked()
         else{
             ui->label_UsernameAleardyExists->hide();
             createAccount();
-            QMessageBox::information(this, tr("Cove Client"), tr("Account successfully created!"));
-            this->hide();
+            QMessageBox msgbox;
+            msgbox.information(this, tr("Cove Client"), tr("Account successfully created!"));
+                cove_menu covemenu;
+                covemenu.setCurrUsername(Username);
+                this->hide();
+                covemenu.exec();
         }
 
     }
@@ -138,5 +152,7 @@ void cove_createaccount::on_pushButton_CreateAccount_clicked()
 
 void cove_createaccount::on_pushButton_Cancel_clicked()
 {
+    cove_login covelogin;
     this->hide();
+    covelogin.exec();
 }

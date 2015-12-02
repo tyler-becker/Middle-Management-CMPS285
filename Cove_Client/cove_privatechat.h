@@ -57,6 +57,7 @@ private slots:
 
 private:
     Ui::cove_privatechat *ui;
+
     QString currUsername;
     QTcpSocket *socket;
 

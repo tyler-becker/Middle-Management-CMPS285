@@ -3,9 +3,12 @@
 #include "cove_madeaccount.h"
 #include "ui_cove_madeaccount.h"
 
-cove_madeaccount::cove_madeaccount(QWidget *parent) :QWidget(parent), ui(new Ui::cove_madeaccount)
+cove_madeaccount::cove_madeaccount(QWidget *parent) : QDialog(parent), ui(new Ui::cove_madeaccount)
 {
     ui->setupUi(this);
+    this->setWindowFlags(this->windowFlags() & ~Qt::WindowContextHelpButtonHint);
+    this->setWindowFlags(this->windowFlags() & Qt::WindowMinimizeButtonHint);
+    this->setWindowFlags(this->windowFlags() & ~Qt::WindowMaximizeButtonHint);
 }
 
 cove_madeaccount::~cove_madeaccount()

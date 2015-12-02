@@ -1,7 +1,7 @@
 #ifndef COVE_CREATEACCOUNT_H
 #define COVE_CREATEACCOUNT_H
 
-#include <QWidget>
+#include <QDialog>
 #include "QtSql"
 
 class cove_login;
@@ -12,7 +12,7 @@ namespace Ui{
   class cove_createaccount;
 }
 
-class cove_createaccount : public QWidget
+class cove_createaccount : public QDialog
 {
     Q_OBJECT
 
@@ -50,6 +50,7 @@ private slots:
     bool validPassword();
     void on_pushButton_CreateAccount_clicked();
     void on_pushButton_Cancel_clicked();
+    void closeEvent(QCloseEvent *event);
 
 private:
     Ui::cove_createaccount *ui;

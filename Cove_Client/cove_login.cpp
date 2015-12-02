@@ -12,11 +12,12 @@
 #include "QEvent"
 #include "QKeyEvent"
 
-cove_login::cove_login(QWidget *parent) : QMainWindow(parent), ui(new Ui::cove_login)
+cove_login::cove_login(QWidget *parent) : QDialog(parent), ui(new Ui::cove_login)
 {
     ui->setupUi(this);
+    this->setWindowFlags(this->windowFlags() & ~Qt::WindowContextHelpButtonHint);
+    this->setWindowFlags(this->windowFlags() & Qt::WindowMinimizeButtonHint);
     this->setWindowFlags(this->windowFlags() & ~Qt::WindowMaximizeButtonHint);
-    this->statusBar()->setSizeGripEnabled(false);
 
     ui->lineEdit_Username->installEventFilter(this);
     ui->lineEdit_Password->installEventFilter(this);
@@ -34,6 +35,12 @@ cove_login::cove_login(QWidget *parent) : QMainWindow(parent), ui(new Ui::cove_l
 cove_login::~cove_login()
 {
     delete ui;
+}
+
+void cove_login::closeEvent(QCloseEvent *event)
+{
+    this->close();
+    QWidget::closeEvent(event);
 }
 
 bool cove_login::eventFilter(QObject *object, QEvent *event)
@@ -65,17 +72,33 @@ void cove_login::on_pushButton_LogIn_clicked()
 
 void cove_login::on_pushButton_CreateAccount_clicked()
 {
-    newCoveAccountWindow = new cove_createaccount(this);
-    newCoveAccountWindow->show();
-    clearLogin();
-    ui->label_InvalidPassword->hide();
+    cove_createaccount createaccount;
+    this->hide();
+    createaccount.exec();
+    //clearLogin();
+    //newCoveAccountWindow = new cove_createaccount(this);
+    //newCoveAccountWindow->show();
+
+    //ui->label_InvalidPassword->hide();
 }
 
 void cove_login::login()
 {
+    QString Username = ui->lineEdit_Username->text();
+
     if(validUsernameAndPassword()){
-        newCoveMenuWindow = new cove_menu(this);
-        newCoveMenuWindow->show();
+        cove_menu covemenu;
+        covemenu.setCurrUsername(Username);
+        this->hide();
+        covemenu.exec();
+
+        //cove_generalchat covegeneralchat;
+        //covegeneralchat.setCurrUsername(Username);
+        //this->hide();
+        //covegeneralchat.exec();
+
+        //newCoveMenuWindow = new cove_menu(this);
+        //newCoveMenuWindow->show();
     }
     else{
         ui->label_InvalidPassword->show();
@@ -112,6 +135,7 @@ bool cove_login::validUsernameAndPassword()
     QString inputUsername = ui->lineEdit_Username->text();
     QString inputPassword = ui->lineEdit_Password->text();
 
+
     dbConnectionOpen();
     QSqlQuery query;
     if(query.exec("select * from userdata where username = '"+inputUsername+"' and password = '"+inputPassword+"'")){
@@ -120,9 +144,7 @@ bool cove_login::validUsernameAndPassword()
             count++;
         }
         if(count == 1){
-            setUsername(ui->lineEdit_Username->text());
-            cove_generalchat covegeneralchat;
-            covegeneralchat.setCurrUsername(getUsername());
+            //setUsername(inputUsername);
             return true;
         }
         else{

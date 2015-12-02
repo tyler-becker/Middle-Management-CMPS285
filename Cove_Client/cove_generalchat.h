@@ -5,8 +5,12 @@
 #include <QTcpSocket>
 #include "QtSql"
 
+#include "cove_login.h"
+#include "ui_cove_login.h"
+#include "QScopedPointer"
+
 class cove_createaccount;
-class cove_login;
+//class cove_login;
 class cove_menu;
 
 namespace Ui{
@@ -56,7 +60,8 @@ private slots:
     void closeEvent(QCloseEvent *event);
 
 private:
-    Ui::cove_generalchat *ui; 
+    Ui::cove_generalchat *ui;
+
     QString currUsername;
     QTcpSocket *socket;
 

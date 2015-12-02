@@ -20,6 +20,7 @@ cove_generalchat::cove_generalchat(QWidget *parent) : QDialog(parent), ui(new Ui
 {
     ui->setupUi(this);
     this->setWindowFlags(this->windowFlags() & ~Qt::WindowContextHelpButtonHint);
+
     ui->textBrowser_ChatDisplay->clear();
     ui->listWidget_UserDisplay->clear();
     ui->textEdit_ChatTypeField->installEventFilter(this);
@@ -35,7 +36,6 @@ cove_generalchat::cove_generalchat(QWidget *parent) : QDialog(parent), ui(new Ui
 
     connect(socket, SIGNAL(readyRead()), this, SLOT(readyRead()));
     connect(socket, SIGNAL(connected()), this, SLOT(connected()));
-
 }
 
 cove_generalchat::~cove_generalchat()
@@ -45,6 +45,9 @@ cove_generalchat::~cove_generalchat()
 void cove_generalchat::closeEvent(QCloseEvent *event)
 {
     socket->disconnectFromHost();
+    cove_menu covemenu;
+    covemenu.setCurrUsername(getCurrUsername());
+    covemenu.show();
     QWidget::closeEvent(event);
 }
 
@@ -93,8 +96,8 @@ void cove_generalchat::on_pushButton_Send_clicked()
 
 void cove_generalchat::readyRead()
 {
-    //QTime setTime = QTime::currentTime();
-    //QString currTime = "(" + setTime.toString("hh:mm:ss ap") + ")" + "<font color = 'cyan'>" " ";
+    QTime setTime = QTime::currentTime();
+    QString currTime = "(" + setTime.toString("hh:mm:ss ap") + ")";
 
     while(socket->canReadLine())
     {
@@ -107,70 +110,58 @@ void cove_generalchat::readyRead()
         {
             QStringList users = usersRegex.cap(1).split(",");
             ui->listWidget_UserDisplay->clear();
+            ui->listWidget_UserDisplay->addItem("Current User List");
+            ui->textBrowser_ChatDisplay->append("Type </commands> for a list of commands!");
             foreach(QString user, users)
                 new QListWidgetItem(user, ui->listWidget_UserDisplay);
         }
         else if(messageRegex.indexIn(line) != -1)
         {
+            //"<font color = 'cyan'>"
             QString user = messageRegex.cap(1);
             QString message = messageRegex.cap(2);
 
-            ui->textBrowser_ChatDisplay->append("<b>" + user + "</b>: " + message);
-            ui->textBrowser_ChatDisplay->setAlignment(Qt::AlignLeft);
-
+            if(user == "Server"){
+                ui->textBrowser_ChatDisplay->append( "<b>" "<font color = 'cyan'>" + user + "</b>: " +  "<font color = 'white'>"+  message);
+                ui->textBrowser_ChatDisplay->setAlignment(Qt::AlignLeft);
+            }
+            else if(user == currUsername){
+                ui->textBrowser_ChatDisplay->append(currTime + " <b>" "<font color = 'yellow'>"  + user + "</b>: " + message);
+                ui->textBrowser_ChatDisplay->setAlignment(Qt::AlignLeft);
+            }
+            else{
+                ui->textBrowser_ChatDisplay->append(currTime + " <b>" "<font color = 'white'>"  + user + "</b>: " + message);
+                ui->textBrowser_ChatDisplay->setAlignment(Qt::AlignLeft);
+            }
         }
     }
 }
 
 void cove_generalchat::connected()
 {
-    QString username = "Barrett";
-    socket->write(QString("/me:" + username + "\n").toUtf8());
+    //QString username = "Barrett";
+    socket->write(QString("/me:" + getCurrUsername() + "\n").toUtf8());
 }
 
 void cove_generalchat::displayInputMessage()
 {
-    //QString username = "Barrett";
-    QTime setTime = QTime::currentTime();
-    QString currTime = "(" + setTime.toString("hh:mm:ss ap") + ")" + "<font color = 'cyan'>" " ";
-    //QString setText = "<font color = 'white'>" ": " + ui->textEdit_ChatTypeField->toPlainText();
     QString message = ui->textEdit_ChatTypeField->toPlainText().trimmed();
-
     QString text = ui->textEdit_ChatTypeField->toPlainText();
+    QString chatName = "General Chat";
 
-    QColor color;
 
     if(ui->textEdit_ChatTypeField->toPlainText().isEmpty()){
         ui->textEdit_ChatTypeField->setFocus();
         return;
     }
     else if(text == "/commands"){
-        ui->textBrowser_ChatDisplay->append("/color <color>, changes username color.");
-        ui->textBrowser_ChatDisplay->setAlignment(Qt::AlignLeft);
-        ui->textBrowser_ChatDisplay->append("/daily message, displays room's daily message.");
-        ui->textBrowser_ChatDisplay->setAlignment(Qt::AlignLeft);
-        ui->textBrowser_ChatDisplay->append("/kick <username>, kicks username entered.");
+        ui->textBrowser_ChatDisplay->append("/daily message, displays the room's daily message");
         ui->textBrowser_ChatDisplay->setAlignment(Qt::AlignLeft);
         ui->textEdit_ChatTypeField->clear();
         ui->textEdit_ChatTypeField->setFocus();
     }
-    else if(text == "/kick bot" && ui->listWidget_UserDisplay->count() > 2){
-         ui->textBrowser_ChatDisplay->append("bot kicked!");
-         ui->textBrowser_ChatDisplay->setAlignment(Qt::AlignLeft);
-         QListWidgetItem* item = ui->listWidget_UserDisplay->takeItem(1);
-         ui->listWidget_UserDisplay->removeItemWidget(item);
-         delete item;
-         ui->textEdit_ChatTypeField->clear();
-         ui->textEdit_ChatTypeField->setFocus();
-    }
-    else if(text == "/daily message" && ui->listWidget_UserDisplay->count() > 2){
-        ui->textBrowser_ChatDisplay->append(currTime  + "<font color = 'white'>" "bot" + "<font color = 'white'>" ": " + "hello!");
-        ui->textBrowser_ChatDisplay->setAlignment(Qt::AlignLeft);
-        ui->textEdit_ChatTypeField->clear();
-        ui->textEdit_ChatTypeField->setFocus();
-    }
-    else if(text == "/color"){
-        ui->textBrowser_ChatDisplay->setTextColor(color);
+    else if(text == "/daily message"){
+        ui->textBrowser_ChatDisplay->append("<font color = 'cyan'>" + chatName + " - " +  "Welcome to General Chat!");
         ui->textBrowser_ChatDisplay->setAlignment(Qt::AlignLeft);
         ui->textEdit_ChatTypeField->clear();
         ui->textEdit_ChatTypeField->setFocus();

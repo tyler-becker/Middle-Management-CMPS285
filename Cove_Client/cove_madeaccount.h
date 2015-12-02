@@ -1,7 +1,7 @@
 #ifndef COVE_MADEACCOUNT_H
 #define COVE_MADEACCOUNT_H
 
-#include <QWidget>
+#include <QDialog>
 
 class cove_login;
 
@@ -9,7 +9,7 @@ namespace Ui{
     class cove_madeaccount;
 }
 
-class cove_madeaccount : public QWidget
+class cove_madeaccount : public QDialog
 {
     Q_OBJECT
 

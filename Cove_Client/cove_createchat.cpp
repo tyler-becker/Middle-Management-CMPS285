@@ -13,6 +13,9 @@ cove_createchat::cove_createchat(QWidget *parent) : QDialog(parent), ui(new Ui::
 {
     ui->setupUi(this);
     this->setWindowFlags(this->windowFlags() & ~Qt::WindowContextHelpButtonHint);
+    this->setWindowFlags(this->windowFlags() & Qt::WindowMinimizeButtonHint);
+    this->setWindowFlags(this->windowFlags() & ~Qt::WindowMaximizeButtonHint);
+
     ui->label_RoomAleardyExists->hide();
     ui->pushButton_CreateChat->setEnabled(false);
     connect(ui->lineEdit_RoomName, SIGNAL(textChanged(const QString&)), this, SLOT(enableCreateChatButton()));
@@ -22,6 +25,25 @@ cove_createchat::cove_createchat(QWidget *parent) : QDialog(parent), ui(new Ui::
 cove_createchat::~cove_createchat()
 {
     delete ui;
+}
+
+void cove_createchat::closeEvent(QCloseEvent *event)
+{
+    cove_menu covemenu;
+    covemenu.setCurrUsername(getCurrUsername());
+    this->hide();
+    covemenu.exec();
+    QWidget::closeEvent(event);
+}
+
+QString cove_createchat::getCurrUsername() const
+{
+    return currUsername;
+}
+
+void cove_createchat::setCurrUsername(const QString &value)
+{
+    currUsername = value;
 }
 
 void cove_createchat::createChat()
@@ -127,9 +149,14 @@ void cove_createchat::on_pushButton_CreateChat_clicked()
             ui->label_RoomAleardyExists->hide();
             createChat();
             QMessageBox::information(this, tr("Cove Client"), tr("Room successfully created!"));
-            newCoveMenuWindow = new cove_menu(this);
-            newCoveMenuWindow->show();
+            cove_menu covemenu;
+            covemenu.setCurrUsername(getCurrUsername());
             this->hide();
+            covemenu.exec();
+
+            //newCoveMenuWindow = new cove_menu(this);
+            //newCoveMenuWindow->show();
+
         }
     }
     dbConnectionClose();
@@ -137,7 +164,12 @@ void cove_createchat::on_pushButton_CreateChat_clicked()
 
 void cove_createchat::on_pushButton_Back_clicked()
 {
-    newCoveMenuWindow = new cove_menu(this);
+    cove_menu covemenu;
+    covemenu.setCurrUsername(getCurrUsername());
     this->hide();
+    covemenu.exec();
+
+    //newCoveMenuWindow = new cove_menu(this);
+    //this->hide();
 }
 

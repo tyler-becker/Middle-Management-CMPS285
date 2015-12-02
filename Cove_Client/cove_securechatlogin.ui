@@ -577,11 +577,16 @@ QLineEdit:focus
      <height>20</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
    <property name="styleSheet">
     <string notr="true">QLabel{
 	color: red;
 	background-color: none;
-	border: 1px solid red;
 }</string>
    </property>
    <property name="text">
@@ -673,11 +678,16 @@ QLineEdit:focus
      <height>20</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
    <property name="styleSheet">
     <string notr="true">QLabel{
 	color: red;
 	background-color: none;
-	border: 1px solid red;
 }</string>
    </property>
    <property name="text">

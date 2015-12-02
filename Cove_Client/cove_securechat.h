@@ -46,6 +46,9 @@ public:
     QString getCurrUsername() const;
     void setCurrUsername(const QString &value);
 
+    QString getCurrRoomname() const;
+    void setCurrRoomname(const QString &value);
+
 private slots:
     void showConnected();
     void on_pushButton_Send_clicked();
@@ -57,7 +60,9 @@ private slots:
 
 private:
     Ui::cove_securechat *ui;
+
     QString currUsername;
+    QString currRoomname;
     QTcpSocket *socket;
 
     //Pointers for Secure Chat Window Buttons.

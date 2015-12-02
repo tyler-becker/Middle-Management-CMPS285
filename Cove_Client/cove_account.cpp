@@ -9,15 +9,37 @@ cove_account::cove_account(QWidget *parent) : QDialog(parent), ui(new Ui::cove_a
 {
     ui->setupUi(this);
     this->setWindowFlags(this->windowFlags() & ~Qt::WindowContextHelpButtonHint);
+    this->setWindowFlags(this->windowFlags() & Qt::WindowMinimizeButtonHint);
+    this->setWindowFlags(this->windowFlags() & ~Qt::WindowMaximizeButtonHint);
+
+    ui->label_UsernameAleardyExists->hide();
     ui->pushButton_ChangeUsername->setEnabled(false);
-    ui->pushButton_ChangePassword->setEnabled(false);
+    ui->lineEdit_ChangeUsername->setFocus();
     connect(ui->lineEdit_ChangeUsername, SIGNAL(textChanged(const QString&)), this, SLOT(enableUsernameChangeButton()));
-    connect(ui->lineEdit_ChangePassword, SIGNAL(textChanged(const QString&)), this, SLOT(enablePasswordChangeButton()));
 }
 
 cove_account::~cove_account()
 {
     delete ui;
+}
+
+void cove_account::closeEvent(QCloseEvent *event)
+{
+    cove_menu covemenu;
+    this->hide();
+    covemenu.setCurrUsername(getCurrUsername());
+    covemenu.exec();
+    QWidget::closeEvent(event);
+}
+
+QString cove_account::getCurrUsername() const
+{
+    return currUsername;
+}
+
+void cove_account::setCurrUsername(const QString &value)
+{
+    currUsername = value;
 }
 
 bool cove_account::validNewUsername()
@@ -66,10 +88,17 @@ void cove_account::on_pushButton_ChangeUsername_clicked()
             count++;
         }
         if(count == 1){
-
+            ui->label_UsernameAleardyExists->show();
+            ui->lineEdit_ChangeUsername->clear();
+            ui->lineEdit_ChangeUsername->setFocus();
         }
         else{
             QMessageBox::information(this, tr("Cove Client"), tr("Username successfully changed!"));
+            cove_menu covemenu;
+            setCurrUsername(newUsername);
+            covemenu.setCurrUsername(getCurrUsername());
+            this->hide();
+            covemenu.exec();
         }
 
     }
@@ -78,65 +107,13 @@ void cove_account::on_pushButton_ChangeUsername_clicked()
     ui->lineEdit_ChangeUsername->setFocus();
 }
 
-bool cove_account::validNewPassword()
-{
-    QRegExp numbers("[0-9]");
-    QRegExp letters("[a-zA-Z]");
-    QRegExp others("\\W");
-    QString newPassword = ui->lineEdit_ChangePassword->text();
-
-    if(newPassword.length() < 3){
-        return false;
-    }
-    else if(!newPassword.contains(numbers) && !newPassword.contains(letters)){
-        return false;
-    }
-    else if(newPassword.contains(numbers) && !newPassword.contains(letters)){
-        return false;
-    }
-    else if(newPassword.contains(others) && newPassword.contains(letters)){
-        return false;
-    }
-    else{
-        return true;
-    }
-}
-
-void cove_account::enablePasswordChangeButton()
-{
-    if(validNewPassword()){
-        ui->pushButton_ChangePassword->setEnabled(true);
-    }
-    else{
-        ui->pushButton_ChangePassword->setEnabled(false);
-    }
-}
-
-void cove_account::on_pushButton_ChangePassword_clicked()
-{
-    QString newPassword = ui->lineEdit_ChangePassword->text();
-
-    dbConnectionOpen();
-    QSqlQuery query;
-    if(query.exec("select * from userdata where password = '"+newPassword+"'")){
-        int count = 0;
-        while(query.next()){
-            count++;
-        }
-        if(count == 1){
-
-        }
-        else{
-            QMessageBox::information(this, tr("Cove Client"), tr("Password successfully changed!"));
-        }
-
-    }
-    dbConnectionClose();
-    ui->lineEdit_ChangePassword->clear();
-    ui->lineEdit_ChangePassword->setFocus();
-}
 void cove_account::on_pushButton_Back_clicked()
 {
-    newCoveMenuWindow = new cove_menu(this);
+    cove_menu covemenu;
+    covemenu.setCurrUsername(getCurrUsername());
     this->hide();
+    covemenu.exec();
+
+    //newCoveMenuWindow = new cove_menu(this);
+    //this->hide();
 }

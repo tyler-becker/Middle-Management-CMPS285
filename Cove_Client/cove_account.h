@@ -40,17 +40,20 @@ public:
     explicit cove_account(QWidget *parent = 0);
     ~cove_account();
 
+    QString getCurrUsername() const;
+    void setCurrUsername(const QString &value);
+
 private slots:
     bool validNewUsername();
     void enableUsernameChangeButton();
     void on_pushButton_ChangeUsername_clicked();
-    bool validNewPassword();
-    void enablePasswordChangeButton();
-    void on_pushButton_ChangePassword_clicked();
     void on_pushButton_Back_clicked();
+    void closeEvent(QCloseEvent *event);
 
 private:
     Ui::cove_account *ui;
+
+    QString currUsername;
 
     //Pointers for Account Window Buttons.
     cove_menu *newCoveMenuWindow;

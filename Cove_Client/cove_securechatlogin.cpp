@@ -8,21 +8,37 @@
 #include "QString"
 #include "QEvent"
 #include "QKeyEvent"
+//#include "QTcpSocket"
 
 cove_securechatlogin::cove_securechatlogin(QWidget *parent) : QDialog(parent), ui(new Ui::cove_securechatlogin)
 {
     ui->setupUi(this);
     this->setWindowFlags(this->windowFlags() & ~Qt::WindowContextHelpButtonHint);
+    this->setWindowFlags(this->windowFlags() & Qt::WindowMinimizeButtonHint);
+    this->setWindowFlags(this->windowFlags() & ~Qt::WindowMaximizeButtonHint);
+
     ui->label_invalidRoomUsername->hide();
     ui->label_invalidRoomPassword->hide();
     ui->pushButton_EnterRoom->setEnabled(false);
     connect(ui->lineEdit_RoomName, SIGNAL(textChanged(const QString&)), this, SLOT(enableEnterRoomButton()));
     connect(ui->lineEdit_RoomPassword, SIGNAL(textChanged(const QString&)), this, SLOT(enableEnterRoomButton()));
+
+    //socket->disconnectFromHost();
 }
 
 cove_securechatlogin::~cove_securechatlogin()
 {
     delete ui;
+}
+
+void cove_securechatlogin::closeEvent(QCloseEvent *event)
+{
+    //socket->disconnectFromHost();
+    cove_menu covemenu;
+    this->hide();
+    covemenu.setCurrUsername(getCurrUsername());
+    covemenu.exec();
+    QWidget::closeEvent(event);
 }
 
 void cove_securechatlogin::clearRoomEnter()
@@ -33,14 +49,43 @@ void cove_securechatlogin::clearRoomEnter()
 
 void cove_securechatlogin::on_pushButton_EnterRoom_clicked()
 {
-        enter();
+    enter();
 }
+
+QString cove_securechatlogin::getCurrRoomname() const
+{
+    return currRoomname;
+}
+
+void cove_securechatlogin::setCurrRoomname(const QString &value)
+{
+    currRoomname = value;
+}
+
+QString cove_securechatlogin::getCurrUsername() const
+{
+    return currUsername;
+}
+
+void cove_securechatlogin::setCurrUsername(const QString &value)
+{
+    currUsername = value;
+}
+
 void cove_securechatlogin::enter()
 {
+    QString currRoomname = ui->lineEdit_RoomName->text();
+
     if(validRoomNameAndRoomPassword()){
-        newSecureChatWindow = new cove_securechat(this);
-        newSecureChatWindow->show();
+        cove_securechat securechat;
+        securechat.setCurrRoomname(currRoomname);
+        securechat.setCurrUsername(getCurrUsername());
         this->hide();
+        securechat.exec();
+
+        //newSecureChatWindow = new cove_securechat(this);
+        //newSecureChatWindow->show();
+        //this->hide();
     }
     else{
         ui->label_invalidRoomPassword->show();
@@ -88,6 +133,11 @@ bool cove_securechatlogin::validRoomNameAndRoomPassword()
 
 void cove_securechatlogin::on_pushButton_Back_clicked()
 {
-    newCoveMenuWindow = new cove_menu(this);
+    cove_menu covemenu;
+    covemenu.setCurrUsername(getCurrUsername());
     this->hide();
+    covemenu.exec();
+
+    //newCoveMenuWindow = new cove_menu(this);
+    //this->hide();
 }

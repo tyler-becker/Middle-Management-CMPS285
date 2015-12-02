@@ -1,7 +1,7 @@
 #ifndef COVE_LOGIN_H
 #define COVE_LOGIN_H
 
-#include <QMainWindow>
+#include <QDialog>
 #include "QtSql"
 
 class cove_generalchat;
@@ -12,7 +12,7 @@ namespace Ui{
   class cove_login;
 }
 
-class cove_login : public QMainWindow
+class cove_login : public QDialog
 {
     Q_OBJECT 
 
@@ -45,6 +45,7 @@ public:
     QString getUsername() const;
     void setUsername(const QString &value);
 
+
 private slots:
     void on_pushButton_LogIn_clicked();
     void on_pushButton_CreateAccount_clicked();
@@ -53,9 +54,11 @@ private slots:
     void enableLoginButton();
     bool eventFilter(QObject *object, QEvent *event);
     bool validUsernameAndPassword();
+    void closeEvent(QCloseEvent *event);
 
 private:
     Ui::cove_login *ui;
+
     QString Username;
 
     //Pointers for Login Window Buttons.
